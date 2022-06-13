@@ -32,8 +32,14 @@ function Nav(props) {
                 </div>
 
                 <div className="right_fourth-column">
-                    <h2 className="right_fourth-column_text">Oddaj rzeczy</h2>
-                    <h2 className="right_fourth-column_text">Zorganizuj zbiórkę</h2>
+                    <div className="right_fourth-column-first">
+                        <h2 className="right_fourth-column-first_text">Oddaj</h2>
+                        <h2 className="right_fourth-column-first_text">rzeczy</h2>
+                    </div>
+                    <div className="right_fourth-column-second">
+                        <h2 className="right_fourth-column-second_text">Zorganizuj</h2>
+                        <h2 className="right_fourth-column-second_text">zbiórkę</h2>
+                    </div>
                 </div>
 
 
