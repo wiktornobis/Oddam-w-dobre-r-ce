@@ -2,28 +2,39 @@ import React from 'react';
 import './_nav.scss';
 import image1 from '../../assets/Home-Hero-Image.jpg'
 import image2 from '../../assets/Decoration.svg'
+import { Link } from "react-router-dom";
 
 
 function Nav(props) {
     return (
-        <div className="nav">
+        <nav className="nav">
             <div className="left">
                 <img className='left_image' src={image1} alt="przykładowe rzeczy" />
             </div>
 
-            <div className="right">
+                <div className="right">
                 <div className="right_first-column">
                     <p className="right_first-column_text">Zaloguj</p>
                     <p className="right_first-column_text-second">Załóż konto</p>
                 </div>
 
-                <div className="right_second-column">
-                    <p className="right_second-column_text">Start</p>
-                    <p className="right_second-column_text">O co chodzi?</p>
-                    <p className="right_second-column_text">O nas</p>
-                    <p className="right_second-column_text">Fundacja i organizacje</p>
-                    <p className="right_second-column_text">Kontakt</p>
-                </div>
+                <ul className="right_second-column">
+                    <li className="right_second-column_text">
+                        <Link to='/'>Start</Link>
+                    </li>
+                    <li className="right_second-column_text">
+                        <Link to='/o-co-chodzi'>O co chodzi?</Link> 
+                    </li>
+                    <li className="right_second-column_text">
+                        <Link to='/o-nas'>O nas</Link> 
+                    </li>
+                    <li className="right_second-column_text">
+                        <Link to='/fundacja'>Fundacja i organizacje</Link> 
+                    </li>
+                    <li className="right_second-column_text">
+                        <Link to='/kontakt'>Kontakt</Link> 
+                    </li>
+                </ul>
 
                 <div className="right_third-column">
                     <h1 className="right_third-column_text">Zacznij pomogać!</h1>
@@ -47,7 +58,7 @@ function Nav(props) {
 
             </div>
 
-        </div>
+        </nav>
 
     );
 }

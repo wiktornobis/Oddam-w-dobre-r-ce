@@ -48,11 +48,19 @@
         display: flex;
         gap: 30px;
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 30px;
         margin-right: 10%;
 
         &_text {
             cursor: pointer;
+        }
+        &_text:first-child {
+            border: 1px solid black;
+            padding: 9px 20px;
+        }
+        
+        &_text ~ li {
+            padding-top: 9px;
         }
         
     }
