@@ -1,7 +1,7 @@
 import React from 'react';
 import './_nav.scss';
 import image1 from '../../assets/Home-Hero-Image.jpg'
-import image2 from '../../assets/Icon-2.svg'
+import image2 from '../../assets/Decoration.svg'
 
 
 function Nav(props) {
@@ -14,20 +14,26 @@ function Nav(props) {
             <div className="right">
                 <div className="right_first-column">
                     <p className="right_first-column_text">Zaloguj</p>
-                    <p className="right_first-column_text">Załóż konto</p>
+                    <p className="right_first-column_text-second">Załóż konto</p>
                 </div>
 
                 <div className="right_second-column">
-                    <p className="right_first-column_text">Start</p>
-                    <p className="right_first-column_text">O co chodzi</p>
-                    <p className="right_first-column_text">O nas</p>
-                    <p className="right_first-column_text">Fundacja i organizacje</p>
-                    <p className="right_first-column_text">Kontakt</p>
+                    <p className="right_second-column_text">Start</p>
+                    <p className="right_second-column_text">O co chodzi?</p>
+                    <p className="right_second-column_text">O nas</p>
+                    <p className="right_second-column_text">Fundacja i organizacje</p>
+                    <p className="right_second-column_text">Kontakt</p>
                 </div>
-                <div className="right_second-column">
-                    <h1 className="right_first-column_main-text">Zacznij pomogać! Oddaj niechciane rzeczy w zaufane ręce</h1>
-                    <img src= {image2} alt="" />
 
+                <div className="right_third-column">
+                    <h1 className="right_third-column_text">Zacznij pomogać!</h1>
+                    <h2 className="right_third-column_text">Oddaj niechciane rzeczy w zaufane ręce</h2>
+                    <img className='right_third-column_img' src= {image2} alt="obrazek dekoracyjny" />
+                </div>
+
+                <div className="right_fourth-column">
+                    <h2 className="right_fourth-column_text">Oddaj rzeczy</h2>
+                    <h2 className="right_fourth-column_text">Zorganizuj zbiórkę</h2>
                 </div>
 
 
