@@ -1,0 +1,30 @@
+@import '../../scss/breakpoints';
+@import '../../scss/variables';
+
+
+.step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -120px;
+    text-align: center;
+
+    &_first{
+        &_text{
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+    }
+    
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 100px;
+    
+
+    
+}
