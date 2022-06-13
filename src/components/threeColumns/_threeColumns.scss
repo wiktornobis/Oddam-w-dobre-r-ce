@@ -1,0 +1,44 @@
+@import '../../scss/breakpoints';
+@import '../../scss/variables';
+
+
+.image {
+    width: 100vw;
+    height: 384px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: -330px;
+
+    &_first, &_second, &_third {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        &_number {
+            font-size: 90px;
+            font-weight: 300;
+            color: $numbers-color;
+        }
+        
+        &_name {
+            font-size: 18px;
+            text-transform: uppercase;
+        
+        }
+        &_text {
+            font-family: 'Merriweather';
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+
+
+
+}
