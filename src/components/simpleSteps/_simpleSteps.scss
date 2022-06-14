@@ -15,6 +15,30 @@
             margin-bottom: 40px;
         }
     }
+
+    &_second {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 210px;
+        
+        &_title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: -20px;
+            border: 1px solid $text-color;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 36px;
+            font-weight: 300;
+            width: 120px;
+            padding: 13px 150px;
+            cursor: pointer;
+
+        }
+    }
     
 }
 .column {

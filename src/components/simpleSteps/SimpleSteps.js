@@ -42,6 +42,10 @@ function SimpleSteps() {
                     <p className="column_fourth_text">w dogodnym terminie</p>
                 </div>
             </div>
+
+            <div className="step_second">
+                <h2 className="step_second_title">oddaj rzeczy</h2>
+            </div>
         </div>
     );
 }
