@@ -1,11 +1,9 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 import './_nav.scss';
 import image1 from '../../assets/Home-Hero-Image.jpg'
 import image2 from '../../assets/Decoration.svg'
-import { Link } from "react-router-dom";
 
-
-function Nav(props) {
+function Nav() {
     return (
         <nav className="nav">
             <div className="left">
