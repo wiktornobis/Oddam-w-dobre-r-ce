@@ -1,7 +1,6 @@
 @import '../../scss/breakpoints';
 @import '../../scss/variables';
 
-
 .step {
     display: flex;
     flex-direction: column;
@@ -16,15 +15,100 @@
             margin-bottom: 40px;
         }
     }
+
+    &_second {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 210px;
+        
+        &_title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: -20px;
+            border: 1px solid $text-color;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 36px;
+            font-weight: 300;
+            width: 120px;
+            padding: 13px 150px;
+            cursor: pointer;
+
+        }
+    }
     
 }
-
 .column {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 100px;
-    gap: 100px;
+    padding: 70px;
+    gap: 150px;
+    width: 100%;
+    height: 325px;
+    background-color: $main-color;
     
+    &_first, &_second, &_fourth {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        margin-bottom: 15px;
+        font-size: 18px;
 
-    
+        &::before {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 1px;
+            background: black;
+            position: absolute;
+            top: 135px;
+        }
+    }
+
+    &_first, &_second, &_third, &_fourth {
+        &_img {
+            margin-bottom: 15px;
+            position: relative;  
+        }
+        &_title {
+            margin-bottom: 30px;
+            width: 130px;
+        }
+        &_text {
+            width: 164px;
+            font-size: 16px;
+        }
+    }
+    &_third {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        margin-bottom: 15px;
+        font-size: 18px;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 1px;
+            background: black;
+            position: absolute;
+            top: 155px;
+        }
+
+        &_img {
+            position: relative;
+            top: 20px;
+        }
+    }
+
 }

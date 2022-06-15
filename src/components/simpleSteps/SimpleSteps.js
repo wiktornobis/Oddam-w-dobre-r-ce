@@ -1,4 +1,4 @@
-import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import './_simpleSteps.scss';
 
 import img1 from '../../assets/Decoration.svg';
@@ -16,31 +16,41 @@ function SimpleSteps() {
             </div>
 
             <div className="column">
+                <div className="column_first">
+                    <img className="column_first_img" src={img2} alt="koszulka" />
+                    <h4 className="column_first_title">Wybierz rzeczy</h4>
+                    <p className="column_first_text">ubrania, zabawki, sprzęt i inne</p>
+                </div>
 
-            <div className="column_all">
-                <img className="column_all_img" src={img2} alt="koszulka" />
-                <h4 className="column_all_title">Wybierz rzeczy</h4>
-                <p className="column_all_text">ubrania, zabawki, sprzęt i inne</p>
+                <div className="column_second">
+                    <img className="column_second_img" src={img3} alt="paczka" />
+                    <h4 className="column_second_title">Spakuj je</h4>
+                    <p className="column_second_text">skorzystaj z</p>
+                    <p className="column_second_text">worków na śmieci</p>
+                </div>
+
+                <div className="column_third">
+                    <img className="column_third_img" src={img4} alt="lupa" />
+                    <h4 className="column_third_title">Zdecyduj komu chcesz pomóc</h4>
+                    <p className="column_third_text">wybierz zaufane miejsce</p>
+                </div>
+
+                <div className="column_fourth">
+                    <img className="column_fourth_img" src={img5} alt="znaczek zamówienia" />
+                    <h4 className="column_fourth_title">Zamów kuriera</h4>
+                    <p className="column_fourth_text">kurier przyjedzie </p>
+                    <p className="column_fourth_text">w dogodnym terminie</p>
+                </div>
             </div>
 
-            <div className="column_all">
-                <img className="column_all_img" src={img3} alt="paczka" />
-                <h4 className="column_all_title">Spakuj je</h4>
-                <p className="column_all_text">skorzystaj z worków na śmieci</p>
-            </div>
-
-            <div className="column_all">
-                <img className="column_all_img" src={img4} alt="lupa" />
-                <h4 className="column_all_title">Zdecyduj komu chcesz pomóc</h4>
-                <p className="column_all_text">wybierz zaufane miejsce</p>
-            </div>
-
-            <div className="column_all">
-                <img className="column_all_img" src={img5} alt="znaczek zamówienia" />
-                <h4 className="column_all_title">Zamów kuriera</h4>
-                <p className="column_all_text">kurier przyjedzie w dogodnym terminie</p>
-            </div>
-            
+            <div className="step_second">
+            <HashLink
+                to="/#zaloguj"
+                scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                >
+                <h2 className="step_second_title">oddaj rzeczy</h2>
+            </HashLink>
+                
             </div>
         </div>
     );
