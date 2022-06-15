@@ -1,0 +1,100 @@
+@import '../../scss/breakpoints';
+@import '../../scss/variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &_first {
+        margin-top: 50px;
+
+        &_title {
+            font-size: 38px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        &_img {
+            margin-bottom: 65px;
+        }
+    }
+
+    &_second {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 180px;
+        margin-bottom: 93px;
+    
+        &_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 300;
+            width: 120px;
+            cursor: pointer;
+        }
+    }
+    &_third {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 10%;
+        margin-bottom: 100px;
+       
+        &_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            margin-bottom: 60px;
+            
+            &-first {
+                width: 600px;
+            }
+        }
+    }
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    justify-content: space-between;
+
+    border-bottom: 1px solid $text-color;
+
+    &_first {
+        display: flex;
+        flex-direction: column;
+         align-items: flex-start;
+
+         &_title {
+            font-size: 26px;
+            font-family: 'Merriweathere', 'san-serif';
+         }
+         &_purpose {
+            font-size: 18px;
+            font-family: 'Merriweathere', 'san-serif';
+            font-style: italic;
+         }
+    }
+
+    &_second {
+        &_text {
+            font-size: 18px;
+            font-family: 'Merriweathere', 'san-serif';
+        }
+    }
+}
+
+.ClassNotToggled {
+    border: 2px solid black;
+}
+
+.ClassToggled {
+    border: 12px solid black;
+}
