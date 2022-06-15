@@ -12,7 +12,7 @@ function Nav() {
 
                 <div className="right">
                 <div className="right_first-column">
-                    <p className="right_first-column_text">Zaloguj</p>
+                    <p id="zaloguj" className="right_first-column_text">Zaloguj</p>
                     <p className="right_first-column_text-second">Załóż konto</p>
                 </div>
 

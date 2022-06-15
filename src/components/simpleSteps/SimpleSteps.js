@@ -1,4 +1,4 @@
-import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import './_simpleSteps.scss';
 
 import img1 from '../../assets/Decoration.svg';
@@ -44,7 +44,13 @@ function SimpleSteps() {
             </div>
 
             <div className="step_second">
+            <HashLink
+                to="/#zaloguj"
+                scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                >
                 <h2 className="step_second_title">oddaj rzeczy</h2>
+            </HashLink>
+                
             </div>
         </div>
     );
