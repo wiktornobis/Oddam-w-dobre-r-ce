@@ -54,14 +54,13 @@
 
         &_text {
             cursor: pointer;
-        }
-        &_text:first-child {
-            border: 1px solid black;
-            padding: 9px 20px;
-        }
-        
-        &_text ~ li {
             padding-top: 9px;
+            &-decoration {
+                cursor: pointer;
+                border: 1px solid $text-color;
+                padding: 9px 20px
+            }
+            
         }
         
     }
@@ -88,7 +87,7 @@
 
     &_fourth-column {
         display: flex;
-        gap: 20px;
+        gap: 30px;
         margin-right: 16%;
         margin-top: 80px;
         text-align: center;
@@ -102,17 +101,19 @@
             &_text {
                 font-size: 36px;
                 font-weight: 300;
+                width: 124px;
                
             }
         }
          &-second {   
             border: 1px solid $main-color;
-            padding: 13px 93px;
+            padding: 13px 51px;
             cursor: pointer;
 
             &_text {
                 font-size: 36px;
                 font-weight: 300;
+                width: 208;
             }
         }
     }

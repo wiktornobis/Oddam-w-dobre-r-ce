@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import './_nav.scss';
 import image1 from '../../assets/Home-Hero-Image.jpg'
 import image2 from '../../assets/Decoration.svg'
@@ -12,26 +13,45 @@ function Nav() {
 
                 <div className="right">
                 <div className="right_first-column">
-                    <p id="zaloguj" className="right_first-column_text">Zaloguj</p>
-                    <p className="right_first-column_text-second">Załóż konto</p>
+                     <li id="zaloguj" className="right_first-column_text">
+                        <Link to='/zaloguj'>Zaloguj</Link> 
+                     </li>
+                     <li id="rejestracja" className="right_first-column_text-second">
+                        <Link to='/rejestracja'>Załóż konto</Link> 
+                     </li>
                 </div>
 
                 <ul className="right_second-column">
-                    <li className="right_second-column_text">
+                    <li className="right_second-column_text-decoration">
                         <Link to='/'>Start</Link>
                     </li>
-                    <li className="right_second-column_text">
-                        <Link to='/o-co-chodzi'>O co chodzi?</Link> 
-                    </li>
-                    <li className="right_second-column_text">
-                        <Link to='/o-nas'>O nas</Link> 
-                    </li>
-                    <li className="right_second-column_text">
-                        <Link to='/fundacja'>Fundacja i organizacje</Link> 
-                    </li>
-                    <li className="right_second-column_text">
-                        <Link to='/kontakt'>Kontakt</Link> 
-                    </li>
+                     <HashLink
+                        to="/#o-co-chodzi"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                        >
+                        <li className="right_second-column_text">O co chodzi?</li>
+                    </HashLink>
+
+                    <HashLink
+                        to="/#o-nas"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                        >
+                        <li className="right_second-column_text">O nas</li>
+                    </HashLink>
+                    
+                    <HashLink
+                        to="/#fundacja"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                        >
+                        <li className="right_second-column_text">Fundacja i organizacje</li>
+                    </HashLink>
+                    
+                    <HashLink
+                        to="/#kontakt"
+                        scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                        >
+                        <li className="right_second-column_text">Kontakt</li>
+                    </HashLink>
                 </ul>
 
                 <div className="right_third-column">
@@ -42,8 +62,9 @@ function Nav() {
 
                 <div className="right_fourth-column">
                     <div className="right_fourth-column-first">
-                        <h2 className="right_fourth-column-first_text">Oddaj</h2>
-                        <h2 className="right_fourth-column-first_text">rzeczy</h2>
+                        <Link to='/zaloguj'>
+                            <li className="right_fourth-column-first_text">Oddaj rzeczy</li> 
+                        </Link>
                     </div>
                     <div className="right_fourth-column-second">
                         <h2 className="right_fourth-column-second_text">Zorganizuj</h2>
