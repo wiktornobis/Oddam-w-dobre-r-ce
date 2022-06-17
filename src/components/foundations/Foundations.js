@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import './_foundations.scss';
 import img from '../../assets/Decoration.svg';
 
 function Foundations() {
     const [active, setActive] = useState('FirstSection');
-    
-
-    useEffect(() => {
-       console.log('Hello')
-    }, [active])
 
     return (
         <div className="container">
@@ -18,11 +13,9 @@ function Foundations() {
                 <img src={img} alt="obrazek dekoracyjny" className="container_first_img" />
             </div>
             <div className="container_second">
-                
                 <h4 onClick={() => setActive('FirstSection')} className="container_second_text ">Fundacjom</h4>
                 <h4 onClick={() => setActive('SecondSection')} className="container_second_text">Organizacjom pozarządowym</h4>
-                <h4 onClick={() => setActive('ThirdSection')} className="container_second_text">Lokalnym zbiórkom</h4>
-                 
+                <h4 onClick={() => setActive('ThirdSection')} className="container_second_text">Lokalnym zbiórkom</h4>  
             </div>
             <div id="fundacja" className="container_third">
 
