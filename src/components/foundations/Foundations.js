@@ -13,14 +13,9 @@ function Foundations() {
                 <img src={img} alt="obrazek dekoracyjny" className="container_first_img" />
             </div>
             <div className="container_second">
-                
-
-
-
-                <h4 onClick={() => setActive('FirstSection')} className="container_second_text">Fundacjom</h4>
+                <h4 onClick={() => setActive('FirstSection')} className="container_second_text ">Fundacjom</h4>
                 <h4 onClick={() => setActive('SecondSection')} className="container_second_text">Organizacjom pozarządowym</h4>
-                <h4 onClick={() => setActive('ThirdSection')} className="container_second_text">Lokalnym zbiórkom</h4>
-                 
+                <h4 onClick={() => setActive('ThirdSection')} className="container_second_text">Lokalnym zbiórkom</h4>  
             </div>
             <div id="fundacja" className="container_third">
 
@@ -131,6 +126,12 @@ function Foundations() {
                     }
                 
             </div> 
+
+            <div className="container_fourth">
+                <p onClick={() => setActive('FirstSection')} className="container_fourth_number">1</p>
+                <p onClick={() => setActive('SecondSection')} className="container_fourth_number">2</p>
+                <p onClick={() => setActive('ThirdSection')} className="container_fourth_number">3</p>
+            </div>
         </div>
         
     );
