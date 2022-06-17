@@ -10,10 +10,10 @@ function Contact() {
 
     const validate = Yup.object({
         firstName: Yup.string()
-          .max(1, 'Must be 1 characters or less')
+          .min(3, 'Musi zawierać conajmniej 3 znaki!')
           .required('Podane imię jest nieprawidłowe!'),
         email: Yup.string()
-          .email('Email is invalid')
+          .email('Podany e-mail jest nieprawidłowy!')
           .required('Podany e-mail jest nieprawidłowy!'),
         text: Yup.string()
           .min(120, 'Wiadomość musi mieć conajmniej 120 znaków!')
@@ -22,15 +22,13 @@ function Contact() {
       })
 
     return (
-        <div className="contact">
+        <div id='kontakt' className="contact">
             <div className="contact_left">
                 <img src={img} alt="ubrania" className="contact_left_image" />
             </div>
             <div className="contact_right">
                 <h3 className="contact_right_title">Skontaktuj się z nami</h3>
                 <img src={img2} alt="ubrania" className="contact_left_img" />
-
-                   
 
                     <Formik
                         initialValues={{
@@ -58,7 +56,9 @@ function Contact() {
                                 <div className="contact_right_form_first-text">
                                     <TextField label="Wpisz swoją wiadomość" name="text" type="text" placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' />
                                 </div>
-                                <button className="btn btn-dark mt-3" type="submit">Wyślij</button> 
+                                <div className="contact_right_form_first-btn">
+                                    <button className="contact_right_form_first-btn-submit" type="submit">Wyślij</button> 
+                                </div>
                             </Form>
                             </div>
                         )}
