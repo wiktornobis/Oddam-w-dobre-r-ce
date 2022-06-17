@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import './_foundations.scss';
 import img from '../../assets/Decoration.svg';
 
 function Foundations() {
     const [active, setActive] = useState('FirstSection');
+    
+
+    useEffect(() => {
+       console.log('Hello')
+    }, [active])
 
     return (
         <div className="container">
@@ -14,10 +19,7 @@ function Foundations() {
             </div>
             <div className="container_second">
                 
-
-
-
-                <h4 onClick={() => setActive('FirstSection')} className="container_second_text">Fundacjom</h4>
+                <h4 onClick={() => setActive('FirstSection')} className="container_second_text ">Fundacjom</h4>
                 <h4 onClick={() => setActive('SecondSection')} className="container_second_text">Organizacjom pozarządowym</h4>
                 <h4 onClick={() => setActive('ThirdSection')} className="container_second_text">Lokalnym zbiórkom</h4>
                  
@@ -131,6 +133,12 @@ function Foundations() {
                     }
                 
             </div> 
+
+            <div className="container_fourth">
+                <p onClick={() => setActive('FirstSection')} className="container_fourth_number">1</p>
+                <p onClick={() => setActive('SecondSection')} className="container_fourth_number">2</p>
+                <p onClick={() => setActive('ThirdSection')} className="container_fourth_number">3</p>
+            </div>
         </div>
         
     );
