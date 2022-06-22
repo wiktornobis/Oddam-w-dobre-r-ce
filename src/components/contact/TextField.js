@@ -1,5 +1,3 @@
-
-import './_textField.scss';
 import { ErrorMessage, useField } from 'formik';
 
 export const TextField = ({ label, ...props }) => {
