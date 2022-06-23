@@ -72,11 +72,18 @@ function Contact() {
                 <h3 className="footer_title">Copyright by Wiktor Nobis</h3>
             </div>
                 <div className="footer_icon">
-                <img src={facebook} alt="facebook" className="footer_icon_img" />
-                <img src={instagram} alt="instagram" className="footer_icon_img" />
+                    <a href="https://www.facebook.com/"
+                        target='_blank'
+                        rel='noreferrer'>
+                        <img src={facebook} alt="facebook" className="footer_icon_img" />
+                    </a>
+                    <a href="https://www.instagram.com/"
+                       target='_blank'
+                       rel='noreferrer'>
+                       <img src={instagram} alt="instagram" className="footer_icon_img" />
+                    </a>
             </div>
         </div>
-    
     </>
        
     );
