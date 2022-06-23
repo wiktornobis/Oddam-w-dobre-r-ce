@@ -9,7 +9,7 @@
     
     &_left {
         height: 1025px;
-        width: 75%;
+        // width: 125%;
         &_image {
             height: 100%;
             width: 100%;
@@ -18,9 +18,9 @@
     }
      &_right {
         height: 800px;
-        width: 35%;
-        position: relative;
-        right: 200px;
+        width: 500px;
+        position: absolute;
+        right: 10%;
         top: 150px;
         display: flex;
         flex-direction: column;
@@ -34,6 +34,7 @@
         &_form {
             width: 100%;
             margin-top: 80px;
+            
 
             &_first {
                 display: flex;
@@ -77,7 +78,7 @@
                         padding: 13px 52px;
                         background-color: white;
                         cursor: pointer;
-                    
+
                     }
                 }
             }
@@ -111,4 +112,31 @@ font-size: 14px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    left: 50%;
+    position: absolute;
+
+    &_title {
+        font-size: 16px;
+        position: relative;
+    }
+
+    &_icon {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        bottom: 15px;
+        right: 10%;
+        
+        &_img {
+            height: 25px;
+            cursor: pointer;
+        }
+    }
 }

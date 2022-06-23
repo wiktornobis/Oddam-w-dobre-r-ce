@@ -1,6 +1,8 @@
 import './_contact.scss';
 import img from '../../assets/Background-Contact-Form.jpg';
 import img2 from '../../assets/Decoration.svg';
+import facebook from '../../assets/Facebook.svg';
+import instagram from '../../assets/Instagram.svg';
 
 import { Formik, Form } from 'formik';
 import { TextField } from './TextField';
@@ -23,6 +25,7 @@ function Contact() {
       })
 
     return (
+        <>
         <div id='kontakt' className="contact">
             <div className="contact_left">
                 <img src={img} alt="ubrania" className="contact_left_image" />
@@ -63,11 +66,19 @@ function Contact() {
                             </Form>
                             </div>
                         )}
-                    </Formik>
-
-                    
+                    </Formik>  
+            </div>
+            <div className="footer">
+                <h3 className="footer_title">Copyright by Wiktor Nobis</h3>
+            </div>
+                <div className="footer_icon">
+                <img src={facebook} alt="facebook" className="footer_icon_img" />
+                <img src={instagram} alt="instagram" className="footer_icon_img" />
             </div>
         </div>
+    
+    </>
+       
     );
 }
 
