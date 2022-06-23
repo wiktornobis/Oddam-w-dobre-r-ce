@@ -1,13 +1,14 @@
 import './_contact.scss';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import { TextField } from './TextField';
+import { Field } from './Field';
+
 import img from '../../assets/Background-Contact-Form.jpg';
 import img2 from '../../assets/Decoration.svg';
 import facebook from '../../assets/Facebook.svg';
 import instagram from '../../assets/Instagram.svg';
 
-import { Formik, Form } from 'formik';
-import { TextField } from './TextField';
-import * as Yup from 'yup';
-import { Field } from './Field';
 
 function Contact() {
 
@@ -21,7 +22,6 @@ function Contact() {
         textarea: Yup.string()
           .min(120, 'Wiadomość musi mieć conajmniej 120 znaków!')
           .required('Wiadomość musi mieć conajmniej 120 znaków!'),
-      
       })
 
     return (
@@ -33,17 +33,18 @@ function Contact() {
             <div className="contact_right">
                 <h3 className="contact_right_title">Skontaktuj się z nami</h3>
                 <img src={img2} alt="ubrania" className="contact_left_img" />
-
                     <Formik
                         initialValues={{
                             firstName: '',
                             email: '',
                             textarea: '',
-
                         }}
                         validationSchema={validate}
-                        onSubmit={values => {
-                            console.log(values)
+                        onSubmit={(values, actions) => {
+                            setTimeout(() => {
+                              alert(JSON.stringify(values, null, 2));
+                              actions.setSubmitting(false);
+                            }, 1000);   
                         }}
                         >
                         {formik => (

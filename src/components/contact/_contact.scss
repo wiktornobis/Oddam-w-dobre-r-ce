@@ -9,7 +9,7 @@
     
     &_left {
         height: 1025px;
-        // width: 125%;
+        width: 100%;
         &_image {
             height: 100%;
             width: 100%;
@@ -20,7 +20,7 @@
         height: 800px;
         width: 500px;
         position: absolute;
-        right: 10%;
+        right: 6%;
         top: 150px;
         display: flex;
         flex-direction: column;
@@ -31,11 +31,11 @@
             font-size: 38px;
             margin-bottom: 35px;
         }
+
         &_form {
             width: 100%;
             margin-top: 80px;
             
-
             &_first {
                 display: flex;
                 gap: 20px;
@@ -78,14 +78,12 @@
                         padding: 13px 52px;
                         background-color: white;
                         cursor: pointer;
-
                     }
                 }
             }
         }
     }
 }
-
 
 label {
     font-size: 16px;
@@ -119,7 +117,7 @@ font-size: 14px;
     justify-content: center;
     align-items: center;
     bottom: 20px;
-    left: 48%;
+    left: 46%;
     position: absolute;
 
     &_title {
@@ -132,11 +130,18 @@ font-size: 14px;
         gap: 20px;
         position: absolute;
         bottom: 15px;
-        right: 10%;
+        right: 6%;
         
         &_img {
             height: 25px;
             cursor: pointer;
         }
     }
+}
+
+::placeholder {
+    opacity: 0.3;
+}
+input, textarea {
+    background: transparent;
 }
