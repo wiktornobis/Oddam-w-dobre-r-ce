@@ -7,7 +7,6 @@
     position: relative;
     height: 1025px;
     
-
     &_left {
         height: 1025px;
         width: 75%;
@@ -19,7 +18,7 @@
     }
      &_right {
         height: 800px;
-        width: 30%;
+        width: 35%;
         position: relative;
         right: 200px;
         top: 150px;
@@ -54,9 +53,17 @@
 
                 &-text {
                     margin-top: 50px;
-                    
-                }
 
+                    &-area {
+                        padding: 10px 0;
+                        height: 105px;
+                        border: none;
+                        border-bottom: 2px solid black;
+                        font-size: 18px;
+                        outline: none;
+                        resize: none;   
+                    }
+                }
 
                 &-btn {
                     margin-top: 60px;
@@ -79,9 +86,6 @@
 }
 
 
-@import '../../scss/breakpoints';
-@import '../../scss/variables';
-
 label {
     font-size: 16px;
   }
@@ -91,9 +95,20 @@ position: relative;
 top: 5px;
 color: red;
 font-size: 14px;
+
+    &::after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: red;
+        display: block;
+        position: absolute;
+        top: -7px;
+    }
 }
 
 .field {
     display: flex;
     flex-direction: column;
+    justify-content: center; 
 }

@@ -5,6 +5,7 @@ import img2 from '../../assets/Decoration.svg';
 import { Formik, Form } from 'formik';
 import { TextField } from './TextField';
 import * as Yup from 'yup';
+import { Field } from './Field';
 
 function Contact() {
 
@@ -15,7 +16,7 @@ function Contact() {
         email: Yup.string()
           .email('Podany e-mail jest nieprawidłowy!')
           .required('Podany e-mail jest nieprawidłowy!'),
-        text: Yup.string()
+        textarea: Yup.string()
           .min(120, 'Wiadomość musi mieć conajmniej 120 znaków!')
           .required('Wiadomość musi mieć conajmniej 120 znaków!'),
       
@@ -34,7 +35,7 @@ function Contact() {
                         initialValues={{
                             firstName: '',
                             email: '',
-                            text: '',
+                            textarea: '',
 
                         }}
                         validationSchema={validate}
@@ -54,7 +55,7 @@ function Contact() {
                                     </div>
                                 </div>
                                 <div className="contact_right_form_first-text">
-                                    <TextField label="Wpisz swoją wiadomość" name="text" type="text" placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' />
+                                    <Field className="contact_right_form_first-text-area" label="Wpisz swoją wiadomość" name="textarea" type="textarea" placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' />
                                 </div>
                                 <div className="contact_right_form_first-btn">
                                     <button className="contact_right_form_first-btn-submit" type="submit">Wyślij</button> 
