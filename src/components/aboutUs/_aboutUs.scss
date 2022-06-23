@@ -3,6 +3,7 @@
 
 .about {
     display: flex;
+    height: 930px;
    
    &_first {
     width: 50%;
@@ -19,6 +20,7 @@
 
     &_img {
         margin-bottom: 65px;
+    
     }
 
     &_text {
@@ -41,6 +43,7 @@
     
     &_img {
         height: 930px;
+        width: 100%;
     }
    }
 }
