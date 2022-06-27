@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
 function Login() {
+    
     return (
-        
         <nav className="nav ">
                 <div className="right login_nav">
                 <div className="right_first-column">

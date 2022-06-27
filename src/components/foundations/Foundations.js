@@ -13,16 +13,31 @@ function Foundations() {
                 <img src={img} alt="obrazek dekoracyjny" className="container_first_img" />
             </div>
             <div className="container_second">
-                <h4 onClick={() => setActive('FirstSection')} className="container_second_text ">Fundacjom</h4>
-                <h4 onClick={() => setActive('SecondSection')} className="container_second_text">Organizacjom pozarządowym</h4>
-                <h4 onClick={() => setActive('ThirdSection')} className="container_second_text">Lokalnym zbiórkom</h4>  
+                <h4 
+                    onClick={() => setActive('FirstSection')} 
+                    className={active === "FirstSection" ? "container_second_text active" : "container_second_text"}
+                >
+                    Fundacjom
+                </h4>
+                <h4 onClick={() => setActive('SecondSection')} 
+                    className={active === "SecondSection" ? "container_second_text active" : "container_second_text"}
+                >
+                    Organizacjom pozarządowym
+                </h4>
+                <h4 onClick={() => setActive('ThirdSection')} 
+                    className={active === "ThirdSection" ? "container_second_text active" : "container_second_text"}
+                >
+                    Lokalnym zbiórkom
+                </h4>  
             </div>
             <div id="fundacja" className="container_third">
 
                 {active === 'FirstSection' && 
                     <>
                     <div className="container_third_text">
-                        <p className="container_third_text-first">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p> 
+                        <p className="container_third_text-first">
+                            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+                        </p> 
                     </div>
                     <div className="section">
                         <div className="section_first">
