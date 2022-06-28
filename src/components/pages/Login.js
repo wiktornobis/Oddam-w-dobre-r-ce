@@ -19,7 +19,7 @@ function Login() {
     
     return (
         <div className="login">
-            <nav className="nav ">
+            <nav className="navigation ">
                     <div className="right nav_login">
                     <div className="right_first-column">
                         <li id="zaloguj" className="right_first-column_text">
@@ -89,10 +89,17 @@ function Login() {
                                         <TextField label="Hasło" name="password" type="password" />
                                     </div>
                                 </div>
-                        
-                
-                                <div className="login_second-container_form_first-btn">
-                                    <button className="login_second-container_form_first-btn-submit" type="submit">Wyślij</button> 
+                                <div className="login_second-container_form">
+                                    <Link to='/rejestracja'>
+                                        <div className="login_second-container_form_login">
+                                            Załóż konto
+                                        </div> 
+                                    </Link>
+                                    <button className="login_second-container_form_login"
+                                        type='submit'
+                                    >
+                                        Zaloguj się
+                                    </button> 
                                 </div>
                             </Form>
                         </div>
