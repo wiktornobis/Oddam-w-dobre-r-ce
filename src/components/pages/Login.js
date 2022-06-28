@@ -9,12 +9,12 @@ import img1 from '../../assets/Decoration.svg';
 function Login() {
 
     const validate = Yup.object({
-        firstName: Yup.string()
-            .min(3, 'Musi zawierać conajmniej 3 znaki!')
-            .required('Podane imię jest nieprawidłowe!'),
         email: Yup.string()
             .email('Podany e-mail jest nieprawidłowy!')
             .required('Podany e-mail jest nieprawidłowy!'),
+        password: Yup.string()
+            .min(3, 'Musi zawierać conajmniej 3 znaki!')
+            .required('Podane hasło jest nieprawidłowe!'),
     })
     
     return (
@@ -67,8 +67,8 @@ function Login() {
             <div className="login_second-container">
             <Formik
                     initialValues={{
-                        firstName: '',
                         email: '',
+                        password: '',
                     }}
                     validationSchema={validate}
                     onSubmit={(values, actions) => {
@@ -83,10 +83,10 @@ function Login() {
                         <Form>
                                 <div className="login_second-container_form_first">
                                     <div className="login_second-container_first-name">
-                                        <TextField label="Wpisz swoje imię" name="firstName" type="text" placeholder='Krzysztof' />
+                                        <TextField label="Email" name="email" type="email" />
                                     </div>
                                     <div className="login_second-container_form_first-name">
-                                        <TextField label="Email" name="email" type="email" placeholder='abc@xyz.pl' />
+                                        <TextField label="Hasło" name="password" type="password" />
                                     </div>
                                 </div>
                         
