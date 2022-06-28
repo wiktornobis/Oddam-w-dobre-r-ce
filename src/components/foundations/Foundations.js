@@ -36,13 +36,17 @@ function Foundations() {
                     <>
                     <div className="container_third_text">
                         <p className="container_third_text-first">
-                            W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+                            W naszej bazie znajdziesz listę zweryfikowanych Fundacji,
+                            z którymi współpracujemy. Możesz sprawdzić czym 
+                            się zajmują, komu pomagają i czego potrzebują.
                         </p> 
                     </div>
                     <div className="section">
                         <div className="section_first">
                             <h4 className="section_first_title">Fundacja "Dbam o Zdrowie"</h4>
-                            <h5 className="section_first_purpose">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</h5>
+                            <h5 className="section_first_purpose">Cel i misja: Pomoc osobom znajdującym 
+                                                                  się w trudnej sytuacji życiowej.
+                            </h5>
                         </div>
                         <div className="section_second">
                             <p className="section_second_text">ubrania, jedzenie, sprzęt AGD, meble, zabawki</p>
@@ -51,7 +55,7 @@ function Foundations() {
                     <div className="section">
                         <div className="section_first">
                             <h4 className="section_first_title">Fundacja “Dla dzieci”"</h4>
-                            <h5 className="section_first_purpose">Cel i misja: Pomoc dzieciom z ubogich rodzin..</h5>
+                            <h5 className="section_first_purpose">Cel i misja: Pomoc dzieciom z ubogich rodzin.</h5>
                         </div>
                         <div className="section_second">
                             <p className="section_second_text">ubrania, meble, zabawki</p>

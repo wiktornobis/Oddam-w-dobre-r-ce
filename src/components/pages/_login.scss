@@ -1,4 +1,22 @@
 
-.login_nav {
-    padding-left: 25%;
+.nav{
+    height: 150px;
+
+    &_login{
+        padding-left: 25%;  
+    }
 }
+.login_first-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+
+    &_title {
+        font-size: 40px;
+        margin-bottom: 35px;
+    }
+}
+
+
