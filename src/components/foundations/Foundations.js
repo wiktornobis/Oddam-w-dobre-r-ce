@@ -15,17 +15,23 @@ function Foundations() {
             <div className="container_second">
                 <h4 
                     onClick={() => setActive('FirstSection')} 
-                    className={active === "FirstSection" ? "container_second_text active" : "container_second_text"}
+                    className={active === "FirstSection" 
+                    ? "container_second_text active-oneLine" 
+                    : "container_second_text"}
                 >
                     Fundacjom
                 </h4>
                 <h4 onClick={() => setActive('SecondSection')} 
-                    className={active === "SecondSection" ? "container_second_text active" : "container_second_text"}
+                    className={active === "SecondSection" 
+                                        ? "container_second_text active-twoLine" 
+                                        : "container_second_text"}
                 >
                     Organizacjom pozarządowym
                 </h4>
                 <h4 onClick={() => setActive('ThirdSection')} 
-                    className={active === "ThirdSection" ? "container_second_text active" : "container_second_text"}
+                    className={active === "ThirdSection" 
+                    ? "container_second_text active-threeLine" 
+                    : "container_second_text"}
                 >
                     Lokalnym zbiórkom
                 </h4>  
@@ -64,7 +70,9 @@ function Foundations() {
                     <div className="section">
                         <div className="section_first">
                             <h4 className="section_first_title">Fundacja “Bez domu”</h4>
-                            <h5 className="section_first_purpose">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.</h5>
+                            <h5 className="section_first_purpose">Cel i misja: Pomoc dla osób nie 
+                                                                  posiadających miejsca zamieszkania.
+                            </h5>
                         </div>
                         <div className="section_second">
                             <p className="section_second_text">ubrania, jedzenie, ciepłe koce</p>
@@ -147,9 +155,27 @@ function Foundations() {
             </div> 
 
             <div className="container_fourth">
-                <p onClick={() => setActive('FirstSection')} className="container_fourth_number">1</p>
-                <p onClick={() => setActive('SecondSection')} className="container_fourth_number">2</p>
-                <p onClick={() => setActive('ThirdSection')} className="container_fourth_number">3</p>
+                <p  onClick={() => setActive('FirstSection')} 
+                    className={active === "FirstSection" 
+                                    ? "container_fourth_number activeNumber" 
+                                    : "container_fourth_number"}
+                >
+                    1
+                </p>
+                <p  onClick={() => setActive('SecondSection')} 
+                    className={active === 'SecondSection' 
+                                        ? "container_fourth_number activeNumber" 
+                                        : "container_fourth_number"}
+                >
+                    2
+                </p>
+                <p onClick={() => setActive('ThirdSection')} 
+                    className={active === 'ThirdSection' 
+                    ? "container_fourth_number activeNumber" 
+                    : "container_fourth_number"}
+                >
+                    3
+                </p>
             </div>
         </div>
         

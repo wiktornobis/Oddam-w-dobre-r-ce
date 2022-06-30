@@ -13,7 +13,7 @@ function Login() {
             .email('Podany e-mail jest nieprawidłowy!')
             .required('Podany e-mail jest nieprawidłowy!'),
         password: Yup.string()
-            .min(3, 'Musi zawierać conajmniej 3 znaki!')
+            .min(6, 'Musi zawierać conajmniej 6 znaków!')
             .required('Podane hasło jest nieprawidłowe!'),
     })
     
