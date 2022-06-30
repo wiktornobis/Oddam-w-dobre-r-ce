@@ -62,10 +62,13 @@ function Login() {
             </nav>
             <div className="login_first-container">
                 <div className="login_first-container_title">Zaloguj się</div>
-                <img src={img1} alt="obrazek dekoracyjny" className="login_first-container_image" />
+                <img src={img1} 
+                     alt="obrazek dekoracyjny" 
+                     className="login_first-container_image" 
+                />
             </div>
             <div className="login_second-container">
-            <Formik
+                <Formik
                     initialValues={{
                         email: '',
                         password: '',
@@ -79,14 +82,23 @@ function Login() {
                     }}
                 >
                     {formik => (
-                                <div className='login_second-container_form'>
-                        <Form>
+                        <div className='login_second-container_form'>
+                            <Form>
                                 <div className="login_second-container_form_first">
-                                    <div className="login_second-container_first-name">
-                                        <TextField label="Email" name="email" type="email" />
-                                    </div>
                                     <div className="login_second-container_form_first-name">
-                                        <TextField label="Hasło" name="password" type="password" />
+                                        <TextField 
+                                            className="login_second-container_form_first-name-email" 
+                                            label="Email" 
+                                            name="email" 
+                                            type="email" 
+                                        />
+                                    </div>
+                                    <div className="login_second-container_form_first-name-label">
+                                        <TextField className="login_second-container_form_first-name-password" 
+                                        label="Hasło" 
+                                        name="password" 
+                                        type="password" 
+                                    />
                                     </div>
                                 </div>
                                 <div className="login_second-container_form">
@@ -95,7 +107,7 @@ function Login() {
                                             Załóż konto
                                         </div> 
                                     </Link>
-                                    <button className="login_second-container_form_login"
+                                    <button className="login_second-container_form_registration"
                                         type='submit'
                                     >
                                         Zaloguj się
@@ -105,7 +117,6 @@ function Login() {
                         </div>
                     )}
                 </Formik>  
-              
             </div>
         </div>
         
