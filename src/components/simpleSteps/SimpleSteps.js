@@ -9,7 +9,7 @@ import img5 from '../../assets/Icon-4.svg';
 
 function SimpleSteps() {
     return (
-        <div className="step">
+        <div id="o-co-chodzi" className="step">
             <div className="step_first">
                 <h3 className="step_first_text">Wystarczą 4 proste kroki</h3>
                 <img className="step_first_img" src={img1} alt="obrazek dekoracyjny" />
