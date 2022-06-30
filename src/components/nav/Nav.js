@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import './_nav.scss';
-import image1 from '../../assets/Home-Hero-Image.jpg'
+
 import image2 from '../../assets/Decoration.svg'
 
 function Nav() {
     return (
         <nav className="nav">
             <div className="left">
-                <img className='left_image' src={image1} alt="przykładowe rzeczy" />
             </div>
                 <div className="right">
                 <div className="right_first-column">
@@ -48,20 +47,23 @@ function Nav() {
                         <li className="right_second-column_text">Kontakt</li>
                     </HashLink>
                 </ul>
-                <div className="right_third-column">
-                    <h1 className="right_third-column_text">Zacznij pomogać!</h1>
-                    <h2 className="right_third-column_text">Oddaj niechciane rzeczy w zaufane ręce</h2>
-                    <img className='right_third-column_img' src= {image2} alt="obrazek dekoracyjny" />
-                </div>
-                <div className="right_fourth-column">
-                    <div className="right_fourth-column-first">
-                        <Link to='/zaloguj'>
-                            <li className="right_fourth-column-first_text">Oddaj rzeczy</li> 
-                        </Link>
+                <div className="right_text">
+                    <div className="right_third-column">
+                        <h1 className="right_third-column_text">Zacznij pomogać!</h1>
+                        <h2 className="right_third-column_text">Oddaj niechciane rzeczy w zaufane ręce</h2>
+                        <img className='right_third-column_img' src= {image2} alt="obrazek dekoracyjny" />
                     </div>
-                    <div className="right_fourth-column-second">
-                        <h2 className="right_fourth-column-second_text">Zorganizuj</h2>
-                        <h2 className="right_fourth-column-second_text">zbiórkę</h2>
+                    <div className="right_fourth-column">
+                        <div className="right_fourth-column-first">
+                            <Link to='/zaloguj'>
+                                <li className="right_fourth-column-first_text">Oddaj</li> 
+                                <li className="right_fourth-column-first_text">rzeczy</li> 
+                            </Link>
+                        </div>
+                        <div className="right_fourth-column-second">
+                            <h2 className="right_fourth-column-second_text">Zorganizuj</h2>
+                            <h2 className="right_fourth-column-second_text">zbiórkę</h2>
+                        </div>
                     </div>
                 </div>
             </div>
