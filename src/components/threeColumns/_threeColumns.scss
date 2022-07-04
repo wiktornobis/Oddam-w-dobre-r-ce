@@ -23,6 +23,11 @@
         top: -280px;
     }
 
+    @include tablet {
+        top: -290px;
+        gap: 20px;
+    }
+
     &_first, &_second, &_third {
         width: 400px;
         display: flex;
@@ -46,6 +51,9 @@
             @include desktop {
                 font-size: 16px;
             }
+            @include tablet {
+                font-size: 14px;
+            }
 
         }
         &_text {
@@ -55,6 +63,9 @@
 
             @include desktop {
                 font-size: 14px;
+            }
+            @include tablet {
+                font-size: 12px;
             }
         }
     }

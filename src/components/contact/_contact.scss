@@ -10,6 +10,10 @@
     @include desktop {
         height: 700px;
     }  
+
+    @include tablet {
+        height: 600px;
+    }  
     
     &_left {
         height: 100%;
@@ -36,6 +40,12 @@
             width: 400px;
             top: 100px;
         }  
+        @include tablet {
+            height: 400px;
+            width: 300px;
+            top: 80px;
+            right: 3%;
+        }  
        
         &_title {
             font-size: 38px;
@@ -45,6 +55,10 @@
                 font-size: 30px;
                 margin-bottom: 20px;
             }  
+            @include tablet {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }  
         }
 
         &_form {
@@ -53,6 +67,9 @@
 
              @include desktop {
                 margin-top: 60px;
+            }  
+            @include tablet {
+                margin-top: 50px;
             }  
             
             &_first {
@@ -69,9 +86,13 @@
                     border-bottom: 2px solid black;
                     font-size: 18px;
                     outline: none;
+                    width: 100%;
 
                     @include desktop {
                         font-size: 16px;
+                    } 
+                    @include tablet {
+                        font-size: 14px;
                     } 
                 }
 
@@ -119,7 +140,10 @@
                             font-size: 16px;
                             padding: 10px 40px;
                         }  
-                        
+                        @include tablet {
+                            font-size: 14px;
+                            padding: 8px 30px;
+                        }    
                     }
                 }
             }
@@ -136,6 +160,9 @@
     @include desktop {
         left: 48%;
     }
+    @include desktop {
+        left: 40%;
+    }
     
 
     &_title {
@@ -143,6 +170,9 @@
        
         @include desktop {
             font-size: 14px;
+        }
+        @include tablet {
+            font-size: 12px;
         }
     }
 
@@ -170,6 +200,9 @@ label {
     @include desktop {
         font-size: 14px;
     } 
+    @include tablet{
+        font-size: 12px;
+    } 
   }
 
 .error {
@@ -178,6 +211,9 @@ top: 5px;
 color: red;
 font-size: 14px;
 
+@include desktop {
+    font-size: 12px;
+} 
 @include desktop {
     font-size: 12px;
 } 
@@ -199,11 +235,11 @@ font-size: 14px;
     justify-content: center; 
 }
 
-
-
 ::placeholder {
     opacity: 0.3;
+    
 }
 input, textarea {
     background: transparent;
+    color: black;
 }
