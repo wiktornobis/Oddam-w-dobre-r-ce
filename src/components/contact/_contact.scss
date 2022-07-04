@@ -214,9 +214,6 @@ font-size: 14px;
 @include desktop {
     font-size: 12px;
 } 
-@include desktop {
-    font-size: 12px;
-} 
 
     &::after {
         content: '';

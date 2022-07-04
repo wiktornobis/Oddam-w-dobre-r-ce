@@ -48,11 +48,9 @@
         @include desktop {
             margin-bottom: 30px;
         }  
-        @include tablet{
-            display: flex;
-            justify-content: space-between;
-            gap: 0;
-            padding: 0 40px;
+        @include tablet {
+            gap: 60px;
+            padding: 0 60px;
         }  
     
         &_text {
@@ -64,9 +62,11 @@
             width: 120px;
             padding: 0 100px;
             cursor: pointer;
+            padding: 10px 80px;
 
             @include desktop {
                 font-size: 20px;
+                padding: 5px 50px;
             }  
             @include tablet {
                 font-size: 18px;
@@ -201,14 +201,14 @@
     padding: 10px 100px;
     
     @include desktop {
-        padding: 5px 70px;
+        padding: 5px 80px;
      }  
 }
 .active-threeLine {
     border: 1px solid black;
     padding: 10px 80px;
     @include desktop {
-        padding: 5px 70px;
+        padding: 5px 50px;
      }  
 }
 .activeNumber {
