@@ -4,6 +4,10 @@
 .nav {
     display: flex;
     height: 963px;
+
+    @include desktop {
+            height: 720px;
+        }
 }
 
 .left {
