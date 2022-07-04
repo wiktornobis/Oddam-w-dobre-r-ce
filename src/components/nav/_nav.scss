@@ -6,8 +6,8 @@
     height: 963px;
 
     @include desktop {
-            height: 720px;
-        }
+        height: 720px;
+    }
 }
 
 .left {
@@ -17,6 +17,8 @@
     background-size: contain;  
 }
 
+
+
 .right {
     display: flex;
     flex-direction: column;
@@ -24,6 +26,8 @@
     align-items: flex-end;
     height: 100%;
     width: 100%;
+
+   
 
 
     &_first-column {
@@ -35,7 +39,6 @@
         @include desktop {
             margin-right: 7%;
         }
-      
         
         &_text, &-text-second {
             padding: 9px 10px;
@@ -44,6 +47,9 @@
             
             @include desktop {
                 font-size: 12px;
+            }
+            @include tablet {
+                font-size: 11px;
             }
         }
         
@@ -55,7 +61,11 @@
           
            @include desktop {
             font-size: 11px;
-         }
+            }
+
+            @include tablet {
+                font-size: 10px;
+            }
         }
     }
 
@@ -68,7 +78,10 @@
 
         @include desktop {
             font-size: 14px;
-            margin-right: 7%;
+        }
+        @include tablet {
+            font-size: 12px;
+            gap: 20px;
         }
 
         &_text {
@@ -88,10 +101,10 @@
     justify-content: center;
     align-items: center;
     margin-right: 10%;
-   
-    @include desktop {
-        margin-right: 7%;
-    }
+
+    @include tablet{
+        margin-right: 0;
+    } 
 }
     &_third-column {
         display: flex;
@@ -102,6 +115,10 @@
         margin-top: 200px;
         margin-right: 5%;
 
+        @include tablet {
+            margin-top: 140px;
+        }
+       
         &_text {
             font-size: 38px;
             font-weight: 400;
@@ -109,6 +126,9 @@
 
             @include desktop {
                 font-size: 24px;
+            }
+            @include tablet {
+                font-size: 18px;
             }
         }
 
@@ -132,7 +152,10 @@
             padding: 13px 113px;
 
             @include desktop {
-                padding: 13px 83px;
+                padding: 13px 63px;
+            }
+            @include tablet {
+                padding: 10px 43px;
             }
            
   
@@ -153,7 +176,10 @@
             padding: 13px 83px; 
 
             @include desktop {
-                padding: 13px 53px;
+                padding: 13px 33px;
+            }
+            @include tablet {
+                padding: 10px 13px;
             }
 
             &_text {
