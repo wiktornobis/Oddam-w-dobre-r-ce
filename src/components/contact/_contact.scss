@@ -6,9 +6,13 @@
     display: flex;
     position: relative;
     height: 1025px;
+
+    @include desktop {
+        height: 700px;
+    }  
     
     &_left {
-        height: 1025px;
+        height: 100%;
         width: 100%;
         &_image {
             height: 100%;
@@ -26,15 +30,30 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+
+        @include desktop {
+            height: 500px;
+            width: 400px;
+            top: 100px;
+        }  
        
         &_title {
             font-size: 38px;
             margin-bottom: 35px;
+
+            @include desktop {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }  
         }
 
         &_form {
             width: 100%;
             margin-top: 80px;
+
+             @include desktop {
+                margin-top: 60px;
+            }  
             
             &_first {
                 display: flex;
@@ -50,10 +69,18 @@
                     border-bottom: 2px solid black;
                     font-size: 18px;
                     outline: none;
+
+                    @include desktop {
+                        font-size: 16px;
+                    } 
                 }
 
                 &-text {
                     margin-top: 50px;
+                    
+                    @include desktop {
+                        margin-top: 30px;
+                    } 
 
                     &-area {
                         padding: 10px 0;
@@ -63,6 +90,11 @@
                         font-size: 18px;
                         outline: none;
                         resize: none;   
+
+                        @include desktop {
+                            height: 110px;
+                            font-size: 16px;
+                        }  
                     }
                 }
 
@@ -71,6 +103,10 @@
                     display: flex;
                     justify-content: flex-end;
 
+                    @include desktop {
+                        margin-top: 40px;
+                    }  
+
                     &-submit {
                         font-size: 18px;
                         font-weight: 300;
@@ -78,6 +114,12 @@
                         padding: 13px 52px;
                         background-color: white;
                         cursor: pointer;
+                        
+                        @include desktop {
+                            font-size: 16px;
+                            padding: 10px 40px;
+                        }  
+                        
                     }
                 }
             }
@@ -85,8 +127,49 @@
     }
 }
 
+.footer {
+    bottom: 20px;
+    width: 230px;
+    left: 45%;
+    position: absolute;
+
+    @include desktop {
+        left: 48%;
+    }
+    
+
+    &_title {
+        font-size: 16px;
+       
+        @include desktop {
+            font-size: 14px;
+        }
+    }
+
+    &_icon {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        bottom: 15px;
+        right: 6%;
+        
+        &_img {
+            height: 25px;
+            cursor: pointer;
+            
+            @include desktop {
+                height: 22px;
+            }
+        }
+    }
+}
+
 label {
     font-size: 16px;
+   
+    @include desktop {
+        font-size: 14px;
+    } 
   }
 
 .error {
@@ -94,6 +177,10 @@ position: relative;
 top: 5px;
 color: red;
 font-size: 14px;
+
+@include desktop {
+    font-size: 12px;
+} 
 
     &::after {
         content: '';
@@ -112,32 +199,7 @@ font-size: 14px;
     justify-content: center; 
 }
 
-.footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 20px;
-    left: 46%;
-    position: absolute;
 
-    &_title {
-        font-size: 16px;
-        position: relative;
-    }
-
-    &_icon {
-        display: flex;
-        gap: 20px;
-        position: absolute;
-        bottom: 15px;
-        right: 6%;
-        
-        &_img {
-            height: 25px;
-            cursor: pointer;
-        }
-    }
-}
 
 ::placeholder {
     opacity: 0.3;

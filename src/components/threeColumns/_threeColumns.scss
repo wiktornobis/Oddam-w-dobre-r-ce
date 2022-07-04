@@ -5,6 +5,10 @@
 .image {
     width: 100vw;
     height: 384px;
+    
+    @include desktop {
+        height: 330px;
+    }
 }
 
 .columns {
@@ -14,6 +18,10 @@
     text-align: center;
     position: relative;
     top: -330px;
+
+    @include desktop {
+        top: -280px;
+    }
 
     &_first, &_second, &_third {
         width: 400px;
@@ -25,17 +33,29 @@
             font-size: 90px;
             font-weight: 300;
             color: $numbers-color;
+
+            @include desktop {
+                font-size: 65px;
+            }
         }
         
         &_name {
             font-size: 18px;
             text-transform: uppercase;
 
+            @include desktop {
+                font-size: 16px;
+            }
+
         }
         &_text {
             font-family: 'Merriweather';
             font-size: 16px;
             font-weight: 300;
+
+            @include desktop {
+                font-size: 14px;
+            }
         }
     }
 }

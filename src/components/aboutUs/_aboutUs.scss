@@ -4,6 +4,10 @@
 .about {
     display: flex;
     height: 930px;
+
+    @include desktop {
+        height: 650px;
+    }
    
    &_first {
     width: 50%;
@@ -16,11 +20,14 @@
     &_us {
         margin-top: 186px;
         margin-bottom: 32px;
+
+        @include desktop {
+            margin-top: 80px;
+        }  
     }
 
     &_img {
         margin-bottom: 65px;
-    
     }
 
     &_text {
@@ -30,6 +37,12 @@
         margin-bottom: 40px;
         text-align: center;
         line-height: 45px;
+       
+        @include desktop {
+            font-size: 25px;
+            width: 600px;
+            margin-bottom: 20px;
+        }    
     }
 
     &_img-second {
@@ -40,9 +53,10 @@
 
    &_second {
     width: 50%;
+    height: 100%;
     
     &_img {
-        height: 930px;
+        height: 100%;
         width: 100%;
     }
    }
