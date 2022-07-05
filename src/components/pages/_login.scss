@@ -18,6 +18,9 @@
         @include desktop {
             margin-top: 60px;
         }
+        @include mobile {
+            margin-top: 0px;
+        }
     
         &_title {
             font-size: 40px;
@@ -26,6 +29,14 @@
             @include desktop {
                 font-size: 30px;
                 margin-bottom: 25px;
+            }
+            @include mobile {
+                font-size: 26px;
+            }
+        }
+        &_image {
+            @include mobile {
+                width: 180px;
             }
         }
     }
@@ -38,9 +49,14 @@
         margin-top: 60px;
         padding-top: 30px;
         background-color: $main-color;
+        position: relative;
 
         @include desktop {
             margin-top: 40px;
+        }
+
+        @include mobile {
+            width: 90%;
         }
 
         &_form {
@@ -50,6 +66,9 @@
             align-items: center;
             gap: 150px;
 
+            @include mobile {
+                margin-top: 0;
+            }    
             &_login {
                 position: relative;
                 top: 100px;
@@ -60,6 +79,11 @@
                 @include desktop {
                     font-size: 16px;
                     top: 80px;
+                }
+                @include mobile {              
+                    font-size: 14px;   
+                    top: 0;
+                    right: 0;  
                 }
             }
 
@@ -77,11 +101,20 @@
                     font-size: 16px;
                     top: 80px;
                 }
+                 @include mobile {
+                    font-size: 14px;
+                    top: 0;
+                    left: 0;  
+                }
             }
 
             &_first-name {
                 &-label {
-                    margin-top: 30px;
+                    margin-top: 30px; 
+                    
+                    @include mobile {
+                        font-size: 14px;
+                    }                  
                 }
                 
                 &-email, &-password {
@@ -94,6 +127,9 @@
                     @include desktop {
                         padding: 5px 0;
                     }
+                    @include mobile {
+                        font-size: 14px;
+                    }
                 }
             }
         }  
@@ -102,3 +138,10 @@
 
 
 
+.container_mobile {
+    @include mobile {
+        position: relative;
+        top: 60px;
+       
+    }
+}

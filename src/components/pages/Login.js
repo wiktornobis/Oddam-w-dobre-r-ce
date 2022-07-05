@@ -104,17 +104,19 @@ function Login() {
                                     />
                                     </div>
                                 </div>
-                                <div className="login_second-container_form">
-                                    <Link to='/rejestracja'>
-                                        <div className="login_second-container_form_login">
-                                            Załóż konto
-                                        </div> 
-                                    </Link>
-                                    <button className="login_second-container_form_registration"
-                                        type='submit'
-                                    >
-                                        Zaloguj się
-                                    </button> 
+                                <div className="container_mobile">
+                                    <div className="login_second-container_form">
+                                        <Link to='/rejestracja'>
+                                            <div className="login_second-container_form_login">
+                                                Załóż konto
+                                            </div> 
+                                        </Link>
+                                        <button className="login_second-container_form_registration"
+                                            type='submit'
+                                        >
+                                            Zaloguj się
+                                        </button> 
+                                    </div>
                                 </div>
                             </Form>
                         </div>

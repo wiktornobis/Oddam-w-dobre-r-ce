@@ -115,17 +115,19 @@ function Registration() {
                                     />
                                     </div>
                                 </div>
-                                <div className="login_second-container_form">
-                                    <Link to='/zaloguj'>
-                                        <div className="login_second-container_form_login">
-                                            Zaloguj się
-                                        </div> 
-                                    </Link>
-                                    <button className="login_second-container_form_registration"
-                                        type='submit'
-                                    >
-                                        Załóż konto
-                                    </button> 
+                                <div className="container_mobile">
+                                    <div className="login_second-container_form">
+                                        <Link to='/zaloguj'>
+                                            <div className="login_second-container_form_login">
+                                                Zaloguj się
+                                            </div> 
+                                        </Link>
+                                        <button className="login_second-container_form_registration"
+                                            type='submit'
+                                        >
+                                            Załóż konto
+                                        </button> 
+                                    </div>
                                 </div>
                             </Form>
                         </div>
