@@ -14,7 +14,9 @@
     @include tablet {
         height: 600px;
     }  
-    
+    @include mobile {
+        display: none;
+    }  
     &_left {
         height: 100%;
         width: 100%;
@@ -160,7 +162,7 @@
     @include desktop {
         left: 48%;
     }
-    @include tablet {
+    @include tablet{
         left: 40%;
     }
     

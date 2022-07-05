@@ -11,6 +11,11 @@
     @include tablet {
         height: 450px;
     }
+    @include mobile {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
    
    &_first {
     width: 50%;
@@ -19,7 +24,11 @@
     justify-content: flex-start;
     align-items: center;
     background-color: $main-color;
-
+   
+    @include mobile {
+        width: 100%;
+        height: 300px;
+    }
     &_us {
         margin-top: 186px;
         margin-bottom: 32px;
@@ -30,13 +39,18 @@
         @include tablet {
             margin-top: 60px;
         } 
+        @include mobile {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        } 
     }
 
     &_img {
         margin-bottom: 65px;
 
         @include tablet {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            width: 140px;
         } 
     }
 
@@ -57,7 +71,13 @@
         @include tablet {
             width: 300px;
             font-size: 16px;
-            flex-wrap: wrap;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+        @include mobile {
+            width: 100%;
+            padding: 0 20px;
+            font-size: 16px;
             line-height: 30px;
             margin-bottom: 10px;
         }
@@ -73,12 +93,22 @@
       @include tablet {
         height: 80px;
       }
+      @include mobile {
+        height: 60px;
+        left: 35%;
+        bottom: 5%;
+      }
      }
    }
 
    &_second {
     width: 50%;
     height: 100%;
+
+    @include mobile {
+        width: 100%;
+        height: 300px;
+    }
     
     &_img {
         height: 100%;

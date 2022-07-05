@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
 import './_login.scss';
+import HamburgerMenu from "../nav/HamburgerMenu";
 import img1 from '../../assets/Decoration.svg';
 function Login() {
 
@@ -20,6 +21,7 @@ function Login() {
     return (
         <div className="login">
             <nav className="navigation ">
+            <HamburgerMenu />
                 <div className="nav_menu_login">
                     <div className="nav_menu_login_first-column">
                         <li id="zaloguj" className="nav_menu_login_first-column_text">
@@ -30,6 +32,7 @@ function Login() {
                         </li>
                     </div>
                     <ul className="nav_menu_login_second-column">
+                    
                         <li className="nav_menu_login_second-column_text-decoration">
                             <Link to='/'>Start</Link>
                         </li>

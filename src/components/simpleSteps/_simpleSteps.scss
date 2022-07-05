@@ -21,6 +21,16 @@
                 font-size: 26px;
                 margin-top: -60px;
             }
+            @include mobile {
+                font-size: 20px;
+                margin-top: -20px;
+                margin-bottom: 20px;
+            }
+        }
+        &_img {
+            @include mobile {
+                width: 180px;
+            }
         }
     }
 
@@ -30,6 +40,10 @@
         align-items: center;
         height: 210px;
         padding-bottom: 20px;
+       
+        @include tablet {
+            height: 13 0px;
+        }
         
         &_title {
             display: flex;
@@ -50,8 +64,11 @@
             }
             @include tablet {
                 font-size: 26px;
-                
                 padding: 12px 110px;
+            }
+            @include mobile {
+                font-size: 18px;
+                padding: 8px 80px;
             }
         }
     }   
@@ -78,6 +95,12 @@
         gap: 20px;
         height: 100%;
     }
+    @include mobile {
+        gap: 5px;
+        height: 100%;
+        padding: 20px;
+        margin-top: 10px;
+    }
     
     &_first, &_second, &_fourth {
         display: flex;
@@ -94,6 +117,7 @@
         @include tablet {
             font-size: 14px;
         }
+        
 
         &::before {
             content: "";
@@ -103,7 +127,10 @@
             background: black;
             position: absolute;
             top: 135px;
-
+           
+            @include mobile {
+                top: 110px;
+            }
         }
     }
 
@@ -111,6 +138,10 @@
         &_img {
             margin-bottom: 15px;
             position: relative;  
+            
+            @include mobile {
+                height: 60px;
+            }
         }
         &_title {
             margin-bottom: 30px;
@@ -119,6 +150,9 @@
             @include desktop {
                 font-size: 16px;
             }  
+             @include mobile {
+                font-size: 14px;
+            }  
         }
         &_text {
             width: 164px;
@@ -126,6 +160,10 @@
 
             @include desktop {
                 font-size: 14px;
+            } 
+            @include mobile {
+                font-size: 12px;
+                width: 90px;
             }   
         }
     }
@@ -137,6 +175,9 @@
         position: relative;
         margin-bottom: 15px;
         font-size: 18px;
+        @include mobile {
+            bottom: 20px;
+        }
 
         &::before {
             content: "";
@@ -146,6 +187,10 @@
             background: black;
             position: absolute;
             top: 155px;
+            
+            @include mobile {
+                top: 130px;
+            }
         }
 
         &_img {

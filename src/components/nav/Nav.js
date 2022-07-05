@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
-import './_nav.scss';
 
-import image2 from '../../assets/Decoration.svg'
+import './_nav.scss';
 import HamburgerMenu from "./HamburgerMenu";
+import image2 from '../../assets/Decoration.svg'
 
 function Nav() {
     return (
