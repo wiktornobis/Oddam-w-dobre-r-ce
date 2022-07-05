@@ -1,0 +1,74 @@
+@import "./src/scss/variables";
+@import "./src/scss/breakpoints";
+
+.navbar {
+ 
+  &__toggle {
+    &--icon {
+      font-size: 2.5rem;
+      position: absolute;
+      left: 1.8rem;
+      top: 3.8rem;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    left: 1.8rem;
+    top: 3.8rem;
+    font-size: 2rem;
+    background: none;
+
+    &--items {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 601px) {
+    display: none;
+  }
+}
+.nav-menu {
+  background-color: whitesmoke;
+  width: 20rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left:-100%;
+  transition: 850ms;
+  z-index: 10;
+}
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.nav-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+  padding-left: 2rem;
+  height: 8rem;
+}
+.nav-text a {
+  color: black;
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  margin-top: 6rem;
+  margin-left: 1.2rem;
+  margin-right: 3rem;
+  padding: 4px;
+  &:hover {
+    background-color: gray;
+    padding: 4px;
+  }
+}
+
+span {
+  margin-left: 1.2rem;
+}

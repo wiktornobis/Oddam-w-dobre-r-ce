@@ -3,6 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import './_nav.scss';
 
 import image2 from '../../assets/Decoration.svg'
+import HamburgerMenu from "./HamburgerMenu";
 
 function Nav() {
     return (
@@ -17,6 +18,7 @@ function Nav() {
                      </li>
                 </div>
                 <ul className="nav_menu_login_second-column">
+                    <HamburgerMenu />
                     <li className="nav_menu_login_second-column_text-decoration">
                         <Link to='/'>Start</Link>
                     </li>
