@@ -17,6 +17,10 @@
             @include desktop {
                 font-size: 30px;
             }
+            @include tablet {
+                font-size: 26px;
+                margin-top: -60px;
+            }
         }
     }
 
@@ -44,7 +48,11 @@
                 width: 90px;
                 padding: 13px 140px;
             }
-
+            @include tablet {
+                font-size: 26px;
+                
+                padding: 12px 110px;
+            }
         }
     }   
 }
@@ -61,6 +69,14 @@
 
     @include desktop {
         margin-top: 60px;
+        gap: 100px;
+    }
+    @include tablet {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: 100%;
     }
     
     &_first, &_second, &_fourth {
@@ -74,6 +90,9 @@
 
         @include desktop {
             font-size: 16px;
+        }
+        @include tablet {
+            font-size: 14px;
         }
 
         &::before {
@@ -99,7 +118,7 @@
             
             @include desktop {
                 font-size: 16px;
-            }
+            }  
         }
         &_text {
             width: 164px;
@@ -107,7 +126,7 @@
 
             @include desktop {
                 font-size: 14px;
-            }
+            }   
         }
     }
     &_third {

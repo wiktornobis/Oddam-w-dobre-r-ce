@@ -1,49 +1,30 @@
 @import '../../scss/breakpoints';
 @import '../../scss/variables';
 
-.nav {
-    display: flex;
-    height: 963px;
-
-    @include desktop {
-        height: 720px;
-    }
-}
-
-.left {
-    height: 963px;
-    width: 75%;
-    background: url('../../assets/Home-Hero-Image.jpg') no-repeat center;
-    background-size: contain;  
-}
-
-
-
-.right {
+.nav_menu {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 100%;
-    width: 100%;
-
-   
-
-
-    &_first-column {
+    
+    &_login {
         display: flex;
-        gap: 10px;
-        margin-top: 36px;
-        margin-right: 10%;
-        
-        @include desktop {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+          &_first-column {
+            display: flex;
+            gap: 10px;
+            margin-top: 36px;
             margin-right: 7%;
-        }
         
-        &_text, &-text-second {
-            padding: 9px 10px;
-            cursor: pointer;
-            font-size: 14px;
+            @include desktop {
+                margin-right: 5%;
+            }
+        
+            &_text, &-text-second {
+                padding: 9px 10px;
+                cursor: pointer;
+                font-size: 14px;
             
             @include desktop {
                 font-size: 12px;
@@ -74,10 +55,11 @@
         gap: 30px;
         font-size: 18px;
         margin-top: 30px;
-        margin-right: 10%;
+        margin-right: 7%;
 
         @include desktop {
             font-size: 14px;
+            margin-right: 5%;
         }
         @include tablet {
             font-size: 12px;
@@ -94,103 +76,133 @@
             } 
         } 
     }
-
-.right_text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10%;
-
-    @include tablet{
-        margin-right: 0;
-    } 
+  }
 }
-    &_third-column {
+
+
+.nav_menu_hero {
+    display: flex;
+    
+    @include tablet {
+        flex-direction: column;
+    }
+
+    &_left {
+        height: 663px;
+        width: 50%;
+        background: url('../../assets/Home-Hero-Image.jpg') no-repeat center;
+        background-size: contain;  
+
+        @include tablet {
+            width: 70%;
+            height: 500px;
+        }
+    }
+    &_right {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        margin-top: 200px;
-        margin-right: 5%;
+        width: 50%;
 
         @include tablet {
-            margin-top: 140px;
+            width: 100%;
+            position: relative;
+            bottom: 130px;
         }
        
-        &_text {
-            font-size: 38px;
-            font-weight: 400;
-            margin-bottom: 10px;
-
-            @include desktop {
-                font-size: 24px;
-            }
-            @include tablet {
-                font-size: 18px;
-            }
-        }
-
-        &_img {
-            margin-top: 25px;
-        }     
     }
-
-    &_fourth-column {
-        display: flex;
-        gap: 30px;
-        margin-top: 80px;
-        text-transform: uppercase;
-        text-align: center;
-
-        &-first{  
-            cursor: pointer;
+        &_third-column {
             display: flex;
             flex-direction: column;
-            border: 1px solid black;
-            padding: 13px 113px;
-
-            @include desktop {
-                padding: 13px 63px;
-            }
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+    
             @include tablet {
-                padding: 10px 43px;
+                margin-top: 140px;
             }
            
-  
             &_text {
-                font-size: 36px;
-                font-weight: 300;
-
+                font-size: 38px;
+                font-weight: 400;
+                margin-bottom: 10px;
+    
                 @include desktop {
-                    font-size: 26px;
+                    font-size: 24px;
+                }
+                @include tablet {
+                    font-size: 18px;
                 }
             }
+    
+            &_img {
+                margin-top: 25px;
+            }     
         }
-        &-second {
-            cursor: pointer;
+    
+        &_fourth-column {
             display: flex;
-            flex-direction: column;
-            border: 1px solid black;
-            padding: 13px 83px; 
-
-            @include desktop {
-                padding: 13px 33px;
-            }
-            @include tablet {
-                padding: 10px 13px;
-            }
-
-            &_text {
-                font-size: 36px;
-                font-weight: 300;
-
+            gap: 30px;
+            margin-top: 80px;
+            text-transform: uppercase;
+            text-align: center;
+    
+            &-first{  
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+                padding: 13px 113px;
+    
                 @include desktop {
-                    font-size: 26px;
+                    padding: 13px 63px;
+                }
+                @include tablet {
+                    padding: 10px 43px;
+                }
+               
+      
+                &_text {
+                    font-size: 36px;
+                    font-weight: 300;
+    
+                    @include desktop {
+                        font-size: 26px;
+                    }
+                    @include tablet {
+                        font-size: 24px;
+                    }
                 }
             }
-        }
-        
-    }    
+            &-second {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+                padding: 13px 83px; 
+    
+                @include desktop {
+                    padding: 13px 33px;
+                }
+                @include tablet {
+                    padding: 10px 13px;
+                }
+    
+                &_text {
+                    font-size: 36px;
+                    font-weight: 300;
+    
+                    @include desktop {
+                        font-size: 26px;
+                    }
+                    @include tablet {
+                        font-size: 24px;
+                    }
+                }
+            }  
+        }    
 }
+
+
+    

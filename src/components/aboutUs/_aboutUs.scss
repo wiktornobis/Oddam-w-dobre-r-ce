@@ -8,6 +8,9 @@
     @include desktop {
         height: 650px;
     }
+    @include tablet {
+        height: 450px;
+    }
    
    &_first {
     width: 50%;
@@ -24,10 +27,17 @@
         @include desktop {
             margin-top: 80px;
         }  
+        @include tablet {
+            margin-top: 60px;
+        } 
     }
 
     &_img {
         margin-bottom: 65px;
+
+        @include tablet {
+            margin-bottom: 30px;
+        } 
     }
 
     &_text {
@@ -37,18 +47,33 @@
         margin-bottom: 40px;
         text-align: center;
         line-height: 45px;
-       
+        
         @include desktop {
-            font-size: 25px;
-            width: 600px;
-            margin-bottom: 20px;
-        }    
+            width: 450px;
+            font-size: 20px;
+            flex-wrap: wrap;
+        }
+
+        @include tablet {
+            width: 300px;
+            font-size: 16px;
+            flex-wrap: wrap;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
     }
 
-    &_img-second {
-       position: relative;
-       left: 220px;
-    }
+    &_img-second {  
+      position: relative;
+      left: 30%;
+
+      @include desktop {
+        left: 25%;
+      }
+      @include tablet {
+        height: 80px;
+      }
+     }
    }
 
    &_second {
