@@ -32,7 +32,10 @@ function HamburgerMenu(props) {
                     {SidebarData.map((item, index) => {
                         return (
                             <li key={index} className={item.cName}>
-                                <HashLink to={item.id}>
+                                <HashLink 
+                                to={item.id}
+                                scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                                >
                                     {item.icon}
                                     <span>{item.title}</span>
                                 </HashLink>
