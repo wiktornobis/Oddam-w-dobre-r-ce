@@ -29,7 +29,7 @@ export const SidebarData = [
     },
     {
         title: 'Kontakt',
-        id: '/#kontakt',
+        id: '/#kontakt-mobile',
         icon: <FontAwesomeIcon icon={faPhone} />,
         cName: 'nav-text'
     },

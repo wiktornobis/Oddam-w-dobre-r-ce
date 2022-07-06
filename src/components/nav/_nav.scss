@@ -112,11 +112,11 @@
         background-size: contain;  
 
         @include tablet {
-            width: 100%;
+            width: 100vw;
             height: 500px;
         }
         @include mobile {
-            width: 100%;
+            width: 100vw;
             height: 300px;
         }
 
@@ -129,7 +129,7 @@
         width: 50%;
 
         @include tablet {
-            width: 100%;
+            width: 100vw;
             position: relative;
             bottom: 130px;
         }
