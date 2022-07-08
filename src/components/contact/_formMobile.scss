@@ -1,0 +1,26 @@
+.form_mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_container {
+        width: 90%;
+    }
+    
+    &_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+    }
+    &_image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_img {
+        width: 220px;
+        margin-top: 30px;  
+    }
+}
