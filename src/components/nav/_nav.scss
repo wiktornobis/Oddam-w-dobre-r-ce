@@ -20,6 +20,9 @@
             @include desktop {
                 margin-right: 5%;
             }
+            @include mobile {
+                margin-right: 1%;
+            }
         
             &_text, &-text-second {
                 padding: 9px 10px;
@@ -31,6 +34,9 @@
             }
             @include tablet {
                 font-size: 11px;
+            }
+            @include mobile {
+                font-size: 13px;
             }
         }
         
@@ -46,6 +52,9 @@
 
             @include tablet {
                 font-size: 10px;
+            }
+            @include mobile {
+                font-size: 12px;
             }
         }
     }
@@ -69,10 +78,19 @@
         &_text {
             cursor: pointer;
             padding-top: 9px;
+
+            @include mobile {
+                display: none;
+            }
+            
             &-decoration {
                 cursor: pointer;
                 border: 1px solid $text-color;
-                padding: 9px 20px
+                padding: 9px 20px;
+
+                @include mobile {
+                    display: none;
+                }
             } 
         } 
     }
@@ -94,9 +112,14 @@
         background-size: contain;  
 
         @include tablet {
-            width: 70%;
+            width: 100vw;
             height: 500px;
         }
+        @include mobile {
+            width: 100vw;
+            height: 300px;
+        }
+
     }
     &_right {
         display: flex;
@@ -106,9 +129,12 @@
         width: 50%;
 
         @include tablet {
-            width: 100%;
+            width: 100vw;
             position: relative;
             bottom: 130px;
+        }
+        @include mobile {
+            bottom: 120px;
         }
        
     }
@@ -120,7 +146,7 @@
             text-align: center;
     
             @include tablet {
-                margin-top: 140px;
+                margin-top: 190px;
             }
            
             &_text {
@@ -132,12 +158,19 @@
                     font-size: 24px;
                 }
                 @include tablet {
-                    font-size: 18px;
+                    font-size: 20px;
+                }
+                @include mobile {
+                    font-size: 15px;
                 }
             }
     
             &_img {
                 margin-top: 25px;
+
+                @include tablet {
+                    margin-top: 15px;
+                }
             }     
         }
     
@@ -147,6 +180,10 @@
             margin-top: 80px;
             text-transform: uppercase;
             text-align: center;
+           
+            @include mobile {
+                gap: 20px;
+            }
     
             &-first{  
                 cursor: pointer;
@@ -161,6 +198,9 @@
                 @include tablet {
                     padding: 10px 43px;
                 }
+                @include mobile {
+                    padding: 10px 35px;
+                }
                
       
                 &_text {
@@ -172,6 +212,9 @@
                     }
                     @include tablet {
                         font-size: 24px;
+                    }
+                    @include mobile {
+                        font-size: 20px;
                     }
                 }
             }
@@ -188,6 +231,9 @@
                 @include tablet {
                     padding: 10px 13px;
                 }
+                 @include mobile {
+                    padding: 10px 10px;
+                }
     
                 &_text {
                     font-size: 36px;
@@ -198,6 +244,9 @@
                     }
                     @include tablet {
                         font-size: 24px;
+                    }
+                    @include mobile {
+                        font-size: 20px;
                     }
                 }
             }  

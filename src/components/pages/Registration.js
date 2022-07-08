@@ -6,6 +6,7 @@ import { HashLink } from 'react-router-hash-link';
 
 import './_login.scss';
 import img1 from '../../assets/Decoration.svg';
+import HamburgerMenu from '../nav/HamburgerMenu';
 
 function Registration() {
 
@@ -24,6 +25,7 @@ function Registration() {
     return (
         <div className="login">
             <nav className="navigation ">
+                <HamburgerMenu />
                 <div className="nav_menu_login">
                     <div className="nav_menu_login_first-column">
                         <li id="zaloguj" className="nav_menu_login_first-column_text">
@@ -113,17 +115,19 @@ function Registration() {
                                     />
                                     </div>
                                 </div>
-                                <div className="login_second-container_form">
-                                    <Link to='/zaloguj'>
-                                        <div className="login_second-container_form_login">
-                                            Zaloguj się
-                                        </div> 
-                                    </Link>
-                                    <button className="login_second-container_form_registration"
-                                        type='submit'
-                                    >
-                                        Załóż konto
-                                    </button> 
+                                <div className="container_mobile">
+                                    <div className="login_second-container_form">
+                                        <Link to='/zaloguj'>
+                                            <div className="login_second-container_form_login">
+                                                Zaloguj się
+                                            </div> 
+                                        </Link>
+                                        <button className="login_second-container_form_registration"
+                                            type='submit'
+                                        >
+                                            Załóż konto
+                                        </button> 
+                                    </div>
                                 </div>
                             </Form>
                         </div>

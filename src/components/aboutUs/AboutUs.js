@@ -1,7 +1,7 @@
 import './_aboutUs.scss';
 import img from '../../assets/Decoration.svg';
 import img2 from '../../assets/Signature.svg';
-import img3 from '../../assets/People.jpg';
+
 
 function AboutUs() {
     return (
@@ -15,9 +15,7 @@ function AboutUs() {
                 </p>
                 <img src={img2} alt="podpis" className="about_first_img-second" />
             </div>
-            <div className="about_second">
-                <img src={img3} alt="grupa ludzi patrząca w dół" className="about_second_img" />
-            </div>
+            <div className="about_second"></div>
         </div>
     );
 }

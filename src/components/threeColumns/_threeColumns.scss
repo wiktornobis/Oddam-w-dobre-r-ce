@@ -9,6 +9,9 @@
     @include desktop {
         height: 330px;
     }
+    @include mobile{
+        height: 270px;
+    }
 }
 
 .columns {
@@ -27,12 +30,21 @@
         top: -290px;
         gap: 20px;
     }
+    @include mobile{
+        top: -240px;
+        gap: 10px;
+        padding: 0 5px;
+    }
 
     &_first, &_second, &_third {
         width: 400px;
         display: flex;
         flex-direction: column;
         gap: 28px;
+
+        @include mobile{
+            gap: 15px;
+        }
 
         &_number {
             font-size: 90px;
@@ -41,6 +53,9 @@
 
             @include desktop {
                 font-size: 65px;
+            }
+            @include mobile{
+                font-size: 40px;
             }
         }
         
@@ -54,6 +69,9 @@
             @include tablet {
                 font-size: 14px;
             }
+            @include mobile{
+                font-size: 12px;
+            }
 
         }
         &_text {
@@ -66,6 +84,9 @@
             }
             @include tablet {
                 font-size: 12px;
+            }
+            @include mobile{
+                font-size: 10px;
             }
         }
     }
