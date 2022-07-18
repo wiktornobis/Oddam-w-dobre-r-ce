@@ -72,10 +72,10 @@
             align-items: center;
             font-size: 24px;
             font-weight: 300;
-            width: 120px;
+            width: 160px;
             padding: 0 100px;
             cursor: pointer;
-            padding: 10px 80px;
+            padding: 10px 92px;
 
             @include desktop {
                 font-size: 20px;
@@ -87,6 +87,7 @@
             @include mobile {
                 font-size: 12px;
                 padding: 5px 20px;
+                width: 120px;
             } 
         }
     }
@@ -237,7 +238,7 @@
 
 .active-oneLine {
     border: 1px solid black;
-    padding: 20px 80px;  
+    padding: 20px 90px;  
    
     @include desktop {
        padding: 15px 69px;
@@ -248,7 +249,7 @@
 }
 .active-twoLine {
     border: 1px solid black;
-    padding: 10px 100px;
+    padding: 10px 90px;
     
     @include desktop {
         padding: 5px 70px;
@@ -259,7 +260,7 @@
 }
 .active-threeLine {
     border: 1px solid black;
-    padding: 10px 80px;
+    padding: 10px 90px;
     @include desktop {
         padding: 5px 70px;
      }  
