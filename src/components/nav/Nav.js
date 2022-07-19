@@ -1,21 +1,43 @@
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
+import { UserAuth } from "../../context/Auth.Context";
 
 import './_nav.scss';
 import HamburgerMenu from "./HamburgerMenu";
 import image2 from '../../assets/Decoration.svg'
 
 function Nav() {
+    const {user, logout} = UserAuth();
+
     return (
         <nav className="nav_menu">
             <div className="nav_menu_login">
                 <div className="nav_menu_login_first-column">
-                     <li id="zaloguj" className="nav_menu_login_first-column_text">
+                    {user && 
+                    <li className="nav_menu_login_first-column-email">
+                        {`Cześć ${user.email}`}
+                    </li>
+                    }
+                    {user && 
+                    <li className="nav_menu_login_first-column-title">
+                        Oddaj rzeczy
+                    </li>
+                    }
+                    {user && 
+                    <li className="nav_menu_login_first-column-logout">
+                        Wyloguj się
+                    </li>
+                    }
+                    {!user && 
+                    <li id="zaloguj" className="nav_menu_login_first-column_text">
                         <Link to='/zaloguj'>Zaloguj</Link> 
-                     </li>
-                     <li id="rejestracja" className="nav_menu_login_first-column_text-second">
+                    </li>
+                    }
+                    {!user && 
+                    <li id="rejestracja" className="nav_menu_login_first-column_text-second">
                         <Link to='/rejestracja'>Załóż konto</Link> 
-                     </li>
+                    </li>
+                    }  
                 </div>
                 <ul className="nav_menu_login_second-column">
                     <HamburgerMenu />

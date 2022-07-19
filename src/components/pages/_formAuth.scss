@@ -1,0 +1,34 @@
+@import '../../scss/breakpoints';
+@import '../../scss/variables';
+
+.form_auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+    &_back {
+        padding: 50px;
+        background-color: rgb(207, 207, 207);
+    }
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+    }
+    &_input {
+        padding: 5px 0;
+        border: none;
+        border-bottom: 2px solid black;
+        font-size: 18px;
+        outline: none;
+        width: 100%;
+
+        @include desktop {
+            font-size: 16px;
+        } 
+        @include tablet {
+            font-size: 14px;
+        } 
+    }
+}
