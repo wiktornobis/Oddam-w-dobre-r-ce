@@ -1,21 +1,56 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import { HashLink } from 'react-router-hash-link';
+import { UserAuth } from "../../context/Auth.Context";
 
 import './_nav.scss';
 import HamburgerMenu from "./HamburgerMenu";
 import image2 from '../../assets/Decoration.svg'
 
 function Nav() {
+    const {user, logout} = UserAuth();
+    const Navigate = useNavigate();
+
+    const handleLogout = async() => {
+        try {
+            await logout()
+            Navigate('/wylogowano')
+        }catch(e) {
+            console.log(e.message)
+        }
+    }
+
     return (
         <nav className="nav_menu">
             <div className="nav_menu_login">
                 <div className="nav_menu_login_first-column">
-                     <li id="zaloguj" className="nav_menu_login_first-column_text">
+                    {user && 
+                    <li className="nav_menu_login_first-column-email">
+                        {`Cześć ${user.email}`}
+                    </li>
+                    }
+                    {user && 
+                    <li className="nav_menu_login_first-column-title">
+                        <Link to='/oddaj-rzeczy'>Oddaj rzeczy</Link>
+                    </li>
+                    }
+                    {user && 
+                    <li className="nav_menu_login_first-column-logout"
+                        onClick={handleLogout}
+                    >
+                        Wyloguj się
+                    </li>
+                    }
+                    {!user && 
+                    <li id="zaloguj" className="nav_menu_login_first-column_text">
                         <Link to='/zaloguj'>Zaloguj</Link> 
-                     </li>
-                     <li id="rejestracja" className="nav_menu_login_first-column_text-second">
+                    </li>
+                    }
+                    {!user && 
+                    <li id="rejestracja" className="nav_menu_login_first-column_text-second">
                         <Link to='/rejestracja'>Załóż konto</Link> 
-                     </li>
+                    </li>
+                    }  
                 </div>
                 <ul className="nav_menu_login_second-column">
                     <HamburgerMenu />
@@ -58,7 +93,7 @@ function Nav() {
                     </div>
                     <div className="nav_menu_hero_fourth-column">
                         <div className="nav_menu_hero_fourth-column-first">
-                            <Link to='/zaloguj'>
+                            <Link to='/oddaj-rzeczy'>
                                 <li className="nav_menu_hero_fourth-column-first_text">Oddaj</li> 
                                 <li className="nav_menu_hero_fourth-column-first_text">rzeczy</li> 
                             </Link>

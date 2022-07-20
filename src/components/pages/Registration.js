@@ -1,24 +1,33 @@
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
-import { TextField } from '../contact/TextField';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from '../../context/Auth.Context';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
+
+
 
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
+import './_formAuth.scss';
 
 function Registration() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('')
+    const { createUser } = UserAuth();
+    const navigate = useNavigate()
 
-    const validate = Yup.object({
-        email: Yup.string()
-            .email('Podany e-mail jest nieprawidłowy!')
-            .required('Podany e-mail jest nieprawidłowy!'),
-        password: Yup.string()
-            .min(6, 'Hasło musi zawierać conajmniej 6 znaków!')
-            .required('Hasło musi zawierać conajmniej 6 znaków!'),
-        confirmPassword: Yup.string()
-            .oneOf([Yup.ref('password'), null], 'Hasła muszą być takie same')
-            .required('Hasło musi zawierać conajmniej 6 znaków!'),
-        })
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        try {
+          await createUser(email, password, confirmPassword);
+          navigate('/zaloguj')
+        } catch (e) {
+          setError(e.message);
+        }
+      };
 
     return (
         <div className="login">
@@ -30,67 +39,53 @@ function Registration() {
                      className="login_first-container_image" 
                 />
             </div>
-            <div className="login_second-container">
-                <Formik
-                    initialValues={{
-                        email: '',
-                        password: '',
-                        confirmPassword: '',
-                    }}
-                    validationSchema={validate}
-                    onSubmit={(values, actions) => {
-                        setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
-                            actions.setSubmitting(false);
-                        }, 1000);   
-                    }}
-                >
-                    {formik => (
-                        <div className='login_second-container_form'>
-                            <Form>
-                                <div className="login_second-container_form_first">
-                                    <div className="login_second-container_form_first-name">
-                                        <TextField 
-                                            className="login_second-container_form_first-name-email" 
-                                            label="Email" 
-                                            name="email" 
-                                            type="email" 
-                                        />
-                                    </div>
-                                    <div className="login_second-container_form_first-name-label">
-                                        <TextField className="login_second-container_form_first-name-password" 
-                                        label="Hasło" 
-                                        name="password" 
-                                        type="password" 
-                                    />
-                                    </div>
-                                    <div className="login_second-container_form_first-name-label">
-                                        <TextField className="login_second-container_form_first-name-password" 
-                                        label="Powtórz hasło" 
-                                        name="confirmPassword" 
-                                        type="password" 
-                                    />
-                                    </div>
-                                </div>
-                                <div className="container_mobile">
-                                    <div className="login_second-container_form">
-                                        <Link to='/zaloguj'>
-                                            <div className="login_second-container_form_login">
-                                                Zaloguj się
-                                            </div> 
-                                        </Link>
-                                        <button className="login_second-container_form_registration"
-                                            type='submit'
-                                        >
-                                            Załóż konto
-                                        </button> 
-                                    </div>
-                                </div>
-                            </Form>
+            {error && 
+                <div className="error_registration">
+                    <FontAwesomeIcon icon={faCircleXmark} className='error_registration_circle' /> 
+                    <p className='error_registration_title'>Użytkownik z podanym adresem e-mail już istnieje.</p>
+                </div>
+            }
+            <div className="form_auth">   
+                    <form 
+                        className='form_auth_back'
+                        onSubmit={handleSubmit}
+                    >
+                        <div className="form_auth_container">
+                            <label className="form_auth_label">Email</label>
+                            <input className="form_auth_input" 
+                                   type="email"
+                                   onChange={(e) => setEmail(e.target.value)}
+                            /> 
                         </div>
-                    )}
-                </Formik>  
-            </div>
+                            <div className="form_auth_container">
+                                <label className="form_auth_label">Hasło</label>
+                                <input className="form_auth_input" 
+                                       type="password" 
+                                       onChange={(e) => setPassword(e.target.value)}
+                                />   
+                            </div>
+                            <div className="form_auth_container">
+                                <label className="form_auth_label">Powtórz hasło</label>
+                                <input className="form_auth_input" 
+                                       type="password" 
+                                       onChange={(e) => setConfirmPassword(e.target.value)}
+                                       
+                                />                 
+                            </div>
+                        <div className="form_auth_mobile">
+                                <Link to='/zaloguj'>
+                                    <p className="form_auth_mobile-login">
+                                        Zaloguj się
+                                    </p> 
+                                </Link>
+                                <button className="form_auth_mobile-registration"
+                                    type='submit'
+                                >
+                                    Załóż konto
+                                </button> 
+                        </div>
+                    </form>
+                </div>
         </div>
         
     )

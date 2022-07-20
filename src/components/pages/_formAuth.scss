@@ -1,0 +1,168 @@
+@import '../../scss/breakpoints';
+@import '../../scss/variables';
+
+.navigation{
+    height: 150px; 
+}
+.nav_login {
+   padding-left: 15%;
+}
+.login {
+    &_first-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 100px;
+
+        @include desktop {
+            margin-top: 60px;
+        }
+        @include mobile {
+            margin-top: 0px;
+        }
+    
+        &_title {
+            font-size: 40px;
+            margin-bottom: 35px;
+
+            @include desktop {
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+            @include mobile {
+                font-size: 26px;
+            }
+        }
+        &_image {
+            @include mobile {
+                width: 180px;
+            }
+        }
+    }
+}
+
+.form_auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+
+    @include mobile {
+       margin-top: 40px;
+    }
+    
+    &_mobile {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 80px;
+
+        &-login {
+            position: absolute;
+            right: 400px;
+            font-size: 14px;
+            border: 1px solid $text-color;
+            padding: 10px;
+            width: 95px;
+            color: $text-color;
+
+            @include mobile {
+                left: -25px;
+                font-size: 11px;
+                width: 80px;
+            }
+        }
+        &-registration {
+            position: absolute;
+            left: 400px;
+            font-size: 14px;
+            background: none;
+            padding: 10px;
+            width: 100px;
+            cursor: pointer;
+            color: $text-color;
+
+            @include mobile {
+                position: relative;
+                top: 2px;
+                left: 40px;
+                font-size: 11px;
+                
+            }
+        }
+    }
+
+    &_back {
+        padding: 50px;
+        background-color: $main-color;
+        width: 500px;
+
+        @include mobile {
+            width: 100%;
+            margin: 0 20px;
+            padding: 30px 25px;
+        }
+    }
+
+    &_container {
+        display: flex;
+        flex-direction: column;
+        height: 60px;
+
+        @include mobile {
+            padding-top: 20px;
+        }
+    }
+    &_input {
+        padding: 5px 0;
+        border: none;
+        border-bottom: 2px solid black;
+        font-size: 18px;
+        outline: none;
+        width: 100%;
+        
+        @include desktop {
+            font-size: 16px;
+        } 
+        @include tablet {
+            font-size: 14px;
+        } 
+    }
+
+    &_label {
+        font-size: 15px;
+    }
+}
+
+.error_login, .error_registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 40px;
+
+    @include mobile {
+        top: 20px;
+    }
+    
+    &_circle {
+        height: 24px;
+        margin-right: 30px;
+        color: red;
+
+        @include mobile {
+            height: 20px;
+        }
+    }
+    &_title {
+        font-size: 15px;
+        color: red;
+        margin-right: 30px;
+
+        @include mobile {
+            font-size: 12px;
+        }
+    }
+}
+
