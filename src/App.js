@@ -7,7 +7,7 @@ import FormMobile from './components/contact/FormMobile';
 import './App.scss';
 import { AuthContextProvider } from "./context/Auth.Context";
 import ProtectedRoute from "./ProtectedRoute";
-import OddajRzeczy from "./components/pages/OddajRzeczy";
+import OddajRzeczy from "./components/returnForm/OddajRzeczy";
 
 function App() {
   return (

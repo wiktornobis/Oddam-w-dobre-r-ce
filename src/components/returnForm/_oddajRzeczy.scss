@@ -1,0 +1,97 @@
+.return_container {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+
+    &-left {
+        background: url('../../assets/Form-Hero-Image.jpg') no-repeat center;
+        background-size: cover;  
+        width: 50%;
+        position: relative;
+        bottom: 160px;
+    }
+    &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        padding-right: 10%;
+        height: 100%;
+
+        &-title {
+            width: 400px;
+            margin-top: 100px;
+            font-size: 24px;
+            
+        }
+        &-img {
+            width: 200px;
+            margin-top: 20px;
+        }
+        &-paragraph {
+            font-size: 26px;
+            margin: 50px 0;
+            font-weight: 300;
+        }
+
+        &-square {
+            display: flex;
+            margin-left: 20px;
+
+            &-first, &-second, &-third, &-fourth {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                transform: rotate(45deg);
+                margin-right: 10px;
+
+                &::before {
+                    content: '1';
+                    display: block;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    top: 5px;
+                    left: 10px;
+                }
+
+                &::after {
+                    content: 'Wybierz rzeczy';
+                    display: block;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    font-size: 16px;
+                    width: 70px;
+                    top: 35px;
+                    left: 17px;
+                }
+            }
+            &-second {
+                &::before {
+                    content: '2';     
+                }
+
+                &::after {
+                    content: 'Spakuj je w worki'
+                }
+            }
+            &-third {
+                &::before {
+                    content: '3';
+                }
+
+                &::after {
+                    content: 'Wybierz fundację';
+                }
+            }
+            &-fourth {
+                &::before {
+                    content: '4';
+                }
+                &::after {
+                    content: 'Zamów kuriera';
+                }
+            }
+        }
+    }
+}

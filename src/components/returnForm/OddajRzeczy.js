@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import { UserAuth } from "../../context/Auth.Context";
 
 import HamburgerMenu from "../nav/HamburgerMenu";
-import '../nav/_nav.scss';
+import './_oddajRzeczy.scss';
 import image1 from '../../assets/Decoration.svg';
 
 function OddajRzeczy() {
@@ -86,8 +86,22 @@ function OddajRzeczy() {
             <div className="return_container">
                 <div className="return_container-left"></div>
                 <div className="return_container-right">
-                    <h2 className="return_container-right-title">Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM</h2>
-                    <img src={image1} alt="obrazek dekoracyjny" />
+                    <h2 className="return_container-right-title">
+                        Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM
+                    </h2>
+                    <img src={image1} 
+                         alt="obrazek dekoracyjny" 
+                         className="return_container-right-img"
+                    />
+                    <p className="return_container-right-paragraph">
+                        Wystarczą 4 proste kroki:
+                    </p>
+                    <div className="return_container-right-square">
+                        <div className="return_container-right-square-first"></div>
+                        <div className="return_container-right-square-second"></div>
+                        <div className="return_container-right-square-third"></div>
+                        <div className="return_container-right-square-fourth"></div>
+                    </div>
                 </div>
             </div>
         </div>
