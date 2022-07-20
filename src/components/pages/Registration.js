@@ -42,40 +42,38 @@ function Registration() {
                         onSubmit={handleSubmit}
                     >
                         <div className="form_auth_container">
-                            <label>Email</label>
+                            <label className="form_auth_label">Email</label>
                             <input className="form_auth_input" 
                                    type="email"
                                    onChange={(e) => setEmail(e.target.value)}
                             /> 
                         </div>
                             <div className="form_auth_container">
-                                <label>Hasło</label>
+                                <label className="form_auth_label">Hasło</label>
                                 <input className="form_auth_input" 
                                        type="password" 
                                        onChange={(e) => setPassword(e.target.value)}
                                 />   
                             </div>
                             <div className="form_auth_container">
-                                <label>Powtórz hasło</label>
+                                <label className="form_auth_label">Powtórz hasło</label>
                                 <input className="form_auth_input" 
                                        type="password" 
                                        onChange={(e) => setConfirmPassword(e.target.value)}
                                        
                                 />                 
                             </div>
-                        <div className="container_mobile">
-                            <div className="login_second-container_form">
+                        <div className="form_auth_mobile">
                                 <Link to='/zaloguj'>
-                                    <div className="login_second-container_form_login">
+                                    <p className="form_auth_mobile-login">
                                         Zaloguj się
-                                    </div> 
+                                    </p> 
                                 </Link>
-                                <button className="login_second-container_form_registration"
+                                <button className="form_auth_mobile-registration"
                                     type='submit'
                                 >
                                     Załóż konto
                                 </button> 
-                            </div>
                         </div>
                     </form>
                 </div>

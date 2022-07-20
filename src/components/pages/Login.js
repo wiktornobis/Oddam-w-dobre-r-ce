@@ -1,21 +1,30 @@
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
-import { TextField } from '../contact/TextField';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from '../../context/Auth.Context';
 
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
-function Login() {
+import './_formAuth.scss';
 
-    const validate = Yup.object({
-        email: Yup.string()
-            .email('Podany e-mail jest nieprawidłowy!')
-            .required('Podany e-mail jest nieprawidłowy!'),
-        password: Yup.string()
-            .min(6, 'Musi zawierać conajmniej 6 znaków!')
-            .required('Podane hasło jest nieprawidłowe!'),
-    })
-    
+function Registration() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('')
+    const navigate = useNavigate()
+    const { signIn } = UserAuth();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        try {
+          await signIn(email, password);
+          navigate('/')
+        } catch (e) {
+          setError(e.message);
+          alert(e.message)
+        }
+      };
+
     return (
         <div className="login">
             <Navigation />
@@ -26,62 +35,43 @@ function Login() {
                      className="login_first-container_image" 
                 />
             </div>
-            <div className="login_second-container">
-                <Formik
-                    initialValues={{
-                        email: '',
-                        password: '',
-                    }}
-                    validationSchema={validate}
-                    onSubmit={(values, actions) => {
-                        setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
-                            actions.setSubmitting(false);
-                        }, 1000);   
-                    }}
-                >
-                    {formik => (
-                        <div className='login_second-container_form'>
-                            <Form>
-                                <div className="login_second-container_form_first">
-                                    <div className="login_second-container_form_first-name">
-                                        <TextField 
-                                            className="login_second-container_form_first-name-email" 
-                                            label="Email" 
-                                            name="email" 
-                                            type="email" 
-                                        />
-                                    </div>
-                                    <div className="login_second-container_form_first-name-label">
-                                        <TextField className="login_second-container_form_first-name-password" 
-                                        label="Hasło" 
-                                        name="password" 
-                                        type="password" 
-                                    />
-                                    </div>
-                                </div>
-                                <div className="container_mobile">
-                                    <div className="login_second-container_form">
-                                        <Link to='/rejestracja'>
-                                            <div className="login_second-container_form_login">
-                                                Załóż konto
-                                            </div> 
-                                        </Link>
-                                        <button className="login_second-container_form_registration"
-                                            type='submit'
-                                        >
-                                            Zaloguj się
-                                        </button> 
-                                    </div>
-                                </div>
-                            </Form>
+            <div className="form_auth">   
+                    <form 
+                        className='form_auth_back'
+                        onSubmit={handleSubmit}
+                    >
+                        <div className="form_auth_container">
+                            <label className="form_auth_label">Email</label>
+                            <input className="form_auth_input" 
+                                   type="email"
+                                   onChange={(e) => setEmail(e.target.value)}
+                            /> 
                         </div>
-                    )}
-                </Formik>  
-            </div>
+                            <div className="form_auth_container">
+                                <label className="form_auth_label">Hasło</label>
+                                <input className="form_auth_input" 
+                                       type="password" 
+                                       onChange={(e) => setPassword(e.target.value)}
+                                />   
+                            </div>
+                        <div className="form_auth_mobile">
+                                <Link to='/rejestracja'>
+                                    <p className="form_auth_mobile-login">
+                                        Załóż konto
+                                    </p> 
+                                </Link>
+                                <button className="form_auth_mobile-registration"
+                                    type='submit'
+                                >
+                                    Zaloguj się
+                                </button> 
+                        </div>
+                    </form>
+                </div>
         </div>
         
     )
 }
 
-export default Login;
+
+export default Registration;

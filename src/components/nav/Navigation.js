@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
-import '../pages/_login.scss';
 import HamburgerMenu from '../nav/HamburgerMenu';
 
 function Navigation() {

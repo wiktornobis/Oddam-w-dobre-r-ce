@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { UserAuth } from "../../context/Auth.Context";
 
@@ -8,6 +8,16 @@ import image2 from '../../assets/Decoration.svg'
 
 function Nav() {
     const {user, logout} = UserAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async() => {
+        try {
+            await logout()
+            navigate('/wylogowano')
+        }catch(e) {
+            console.log(e.message)
+        }
+    }
 
     return (
         <nav className="nav_menu">
@@ -24,7 +34,9 @@ function Nav() {
                     </li>
                     }
                     {user && 
-                    <li className="nav_menu_login_first-column-logout">
+                    <li className="nav_menu_login_first-column-logout"
+                        onClick={handleLogout}
+                    >
                         Wyloguj się
                     </li>
                     }
