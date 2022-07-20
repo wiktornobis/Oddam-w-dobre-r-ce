@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from '../../context/Auth.Context';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
@@ -22,7 +24,6 @@ function Registration() {
           navigate('/zaloguj')
         } catch (e) {
           setError(e.message);
-          console.log(e.message);
         }
       };
 
@@ -36,6 +37,12 @@ function Registration() {
                      className="login_first-container_image" 
                 />
             </div>
+            {error && 
+                <div className="error_registration">
+                    <FontAwesomeIcon icon={faCircleXmark} className='error_registration_circle' /> 
+                    <p className='error_registration_title'>Użytkownik z podanym adresem e-mail już istnieje.</p>
+                </div>
+            }
             <div className="form_auth">   
                     <form 
                         className='form_auth_back'

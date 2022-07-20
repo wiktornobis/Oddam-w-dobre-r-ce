@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from '../../context/Auth.Context';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
@@ -21,7 +23,6 @@ function Registration() {
           navigate('/')
         } catch (e) {
           setError(e.message);
-          alert(e.message)
         }
       };
 
@@ -35,6 +36,13 @@ function Registration() {
                      className="login_first-container_image" 
                 />
             </div>
+            {error && 
+                <div className="error_login">
+                     <FontAwesomeIcon icon={faCircleXmark} className='error_login_circle' />
+                      
+                    <p className='error_login_title'>Podany login lub hasło nie jest poprawne.</p>
+                </div>
+            }
             <div className="form_auth">   
                     <form 
                         className='form_auth_back'

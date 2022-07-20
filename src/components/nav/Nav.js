@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+
 import { HashLink } from 'react-router-hash-link';
 import { UserAuth } from "../../context/Auth.Context";
 
@@ -8,12 +9,12 @@ import image2 from '../../assets/Decoration.svg'
 
 function Nav() {
     const {user, logout} = UserAuth();
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
 
     const handleLogout = async() => {
         try {
             await logout()
-            navigate('/wylogowano')
+            Navigate('/wylogowano')
         }catch(e) {
             console.log(e.message)
         }
@@ -30,7 +31,7 @@ function Nav() {
                     }
                     {user && 
                     <li className="nav_menu_login_first-column-title">
-                        Oddaj rzeczy
+                        <Link to='/oddaj-rzeczy'>Oddaj rzeczy</Link>
                     </li>
                     }
                     {user && 
@@ -92,7 +93,7 @@ function Nav() {
                     </div>
                     <div className="nav_menu_hero_fourth-column">
                         <div className="nav_menu_hero_fourth-column-first">
-                            <Link to='/zaloguj'>
+                            <Link to='/oddaj-rzeczy'>
                                 <li className="nav_menu_hero_fourth-column-first_text">Oddaj</li> 
                                 <li className="nav_menu_hero_fourth-column-first_text">rzeczy</li> 
                             </Link>
