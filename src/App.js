@@ -13,21 +13,23 @@ function App() {
   return (
     <Router>
       <AuthContextProvider>
-            <Routes>
-                <Route path='/' element={<Home />} exact />
-                <Route path='/zaloguj' element={<Login />} />
-                <Route path='/rejestracja' element={<Registration />} />    
-                <Route path='/formularz-mobile' element={<FormMobile />} />    
-                <Route path='/oddaj-rzeczy' element={
+        <Routes>
+          <Route path='/' element={<Home />} exact />
+          <Route path='/zaloguj' element={<Login />} />
+          <Route path='/rejestracja' element={<Registration />} />    
+          <Route path='/formularz-mobile' element={<FormMobile />} />    
+          <Route path='/oddaj-rzeczy' 
+                  element={
                   <ProtectedRoute>
                     <OddajRzeczy />
                   </ProtectedRoute>
-                } />    
-            </Routes>
-        </AuthContextProvider>
+                  } 
+          />    
+        </Routes>
+      </AuthContextProvider>
     </Router>
 
-);
+  );
 }
 
 export default App;

@@ -4,6 +4,8 @@ import { UserAuth } from '../../context/Auth.Context';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 
+
+
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
 import './_formAuth.scss';
