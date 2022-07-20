@@ -38,8 +38,7 @@ function Registration() {
             </div>
             {error && 
                 <div className="error_login">
-                     <FontAwesomeIcon icon={faCircleXmark} className='error_login_circle' />
-                      
+                     <FontAwesomeIcon icon={faCircleXmark} className='error_login_circle' /> 
                     <p className='error_login_title'>Podany login lub hasło nie jest poprawne.</p>
                 </div>
             }

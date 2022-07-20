@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { HashLink } from 'react-router-hash-link';
 import { UserAuth } from "../../context/Auth.Context";
 
@@ -54,7 +53,9 @@ function Nav() {
                 </div>
                 <ul className="nav_menu_login_second-column">
                     <HamburgerMenu />
-                    <li className="nav_menu_login_second-column_text-decoration">
+                    <li className="nav_menu_login_second-column_text-decoration"
+                        id="oddaj-rzeczy"    
+                    >
                         <Link to='/'>Start</Link>
                     </li>
                      <HashLink

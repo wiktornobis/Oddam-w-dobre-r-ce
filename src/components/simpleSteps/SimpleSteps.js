@@ -40,7 +40,7 @@ function SimpleSteps() {
             </div>
             <div className="step_second">
             <HashLink
-                to="/#zaloguj"
+                to="/#oddaj-rzeczy"
                 scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
                 >
                 <h2 className="step_second_title">oddaj rzeczy</h2>
