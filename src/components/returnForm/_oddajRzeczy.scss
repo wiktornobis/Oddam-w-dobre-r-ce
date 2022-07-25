@@ -361,6 +361,44 @@
             &-copyright {
                 background-color: $main-color;
             }
+            &-dropdown {
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: 150px;
+
+                &-title {
+                    margin-right: 50px;
+                    font-size: 22px;
+                    
+                }
+                &-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border: 1px solid black;
+                    padding: 10px 70px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+                &-content {
+                    position: absolute;
+                    left: 230px;
+                    top: 50px;
+                    border: 1px solid black;
+                    
+                    &-item {
+                        font-size: 18px;   
+                        padding: 4px 20px;
+
+                        &:hover {
+                            background-color: $hero-color;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
