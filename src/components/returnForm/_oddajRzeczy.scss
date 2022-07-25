@@ -1,18 +1,20 @@
 @import '../../scss/breakpoints';
 @import '../../scss/variables';
 
+
 .return_container {
     display: flex;
     justify-content: space-between;
     height: 700px;
+    margin-bottom: -160px;
 
     @include tablet {
         flex-direction: column;
-        height: 1100px;
+        height: 1200px;
     }
     @include mobile {
         flex-direction: column;
-        height: 800px;
+        height: 900px;
     }
 
     &-left {
@@ -30,6 +32,7 @@
         }
         @include mobile {
             margin-top: 20px;
+            height: 60%;
         }
         
     }
@@ -173,15 +176,14 @@
         background-color: $hero-color;
         height: 140px;
         gap: 5px;
-        position: relative;
-        bottom: 160px;
 
         @include tablet {
             bottom: 80px;
+            padding-left: 20px;
         }
 
         @include mobile {
-            padding-left: 30px;
+            padding-left: 15px;
             height: 80px;
             bottom: 0;
         }
@@ -220,6 +222,142 @@
     &_third {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        justify-content: center;
+        padding: 30px 0 30px 60px;
+        gap: 40px;
+        background: url('../../assets/Background-Form.jpg') no-repeat center;
+        background-size: cover;  
+        width: 100%;
+
+        @include tablet {
+            padding: 20px 0 20px 20px;
+            gap: 20px;
+        }
+        @include mobile {
+            padding: 15px 0 15px 15px;
+            gap: 10px;
+        }
+
+        &-paragraph {
+            font-size: 22px;
+            margin-bottom: 60px;
+
+            @include desktop {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+            @include tablet {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            @include mobile {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+        }
+        &-title {
+            font-size: 34px;
+            font-weight: 600;
+            
+            @include desktop {
+                font-size: 24px;
+            }
+            @include tablet {
+                font-size: 18px;
+            }
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+        &-label {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+           
+            @include desktop {
+                font-size: 18px;
+            }
+            @include tablet {
+                font-size: 16px;
+            }
+            @include mobile {
+                font-size: 12px;
+            }
+            
+        }
+        &-input {
+            appearance: none;
+            background-color: #fff;
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            border-radius: 0;
+            transform: translateY(-0.075em);
+            cursor: pointer;
+            border: 1px solid black;
+            display: grid;
+            place-content: center;
+            font: inherit;
+
+            @include desktop {
+                width: 25px;
+                height: 25px;
+            }
+            @include tablet {
+                width: 20px;
+                height: 20px;
+            }
+
+            &::before {
+                content: "";
+                width: 1em;
+                height: 1em;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em $hero-color;
+                
+            }
+            &:checked::before {
+                transform: scale(1);
+                
+            }
+               
+        }
+        &-btn {
+            display: flex;
+            font-size: 20px;
+            border: 1px solid black;
+            width: 90px;
+            padding:  10px 20px;
+            margin-top: 60px;
+            cursor: pointer;
+            background: none;
+            color: black;
+
+            @include desktop {
+                font-size: 18px;
+                margin-top: 30px;
+                width: 85px;
+            }
+            @include tablet {
+                font-size: 16px;
+                margin-top: 15px;
+                padding: 8px 20px;
+                width: 80px;
+            }
+            @include mobile {
+                font-size: 14px;
+                margin-top: 10px;
+                padding: 8px 20px;
+                width: 75px;
+            }
+        }
+        &-contact {
+            background-color: #fff;
+        }
+        &-copyright {
+            background-color: $main-color;
+        }
     }
 }
+

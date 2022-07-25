@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { UserAuth } from "../../context/Auth.Context";
@@ -5,8 +6,9 @@ import { UserAuth } from "../../context/Auth.Context";
 import HamburgerMenu from "../nav/HamburgerMenu";
 import './_oddajRzeczy.scss';
 import image1 from '../../assets/Decoration.svg';
-import { useState } from "react";
-import { faBedPulse } from "@fortawesome/free-solid-svg-icons";
+import Contact from '../contact/Contact';
+import ContactMobile from '../contact/ContactMobile';
+
 
 function OddajRzeczy() {
     const [checkedOne, setCheckedOne] = useState(false)
@@ -139,40 +141,46 @@ function OddajRzeczy() {
             <div className="return_container_third">
                 <p className="return_container_third-paragraph">Krok 1/4</p>
                 <p className="return_container_third-title">Zaznacz co chcesz oddać</p>
-                <label>
+                <label className="return_container_third-label">
                     <input
+                    className="return_container_third-input"
                     type="checkbox"
                     value={checkedOne}
                     onChange={handleChangeOne}
                     />
                     ubrania, które nadają się do ponownego użycia
                 </label>
-                <label>
+                <label className="return_container_third-label">
                     <input
+                    className="return_container_third-input"
                     type="checkbox"
                     value={checkedTwo}
                     onChange={handleChangeTwo}
                     />
                     ubrania, do wyrzucenia
+                    <span class="checkmark"></span>
                 </label>
-                <label>
+                <label className="return_container_third-label">
                     <input
+                    className="return_container_third-input"
                     type="checkbox"
                     value={checkedThree}
                     onChange={handleChangeThree}
                     />
                     zabawki
                 </label>
-                <label>
+                <label className="return_container_third-label">
                     <input
+                    className="return_container_third-input"
                     type="checkbox"
                     value={checkedFour}
                     onChange={handleChangeFour}
                     />
                     książki
                 </label>
-                <label>
+                <label className="return_container_third-label">
                     <input
+                    className="return_container_third-input"
                     type="checkbox"
                     value={checkedFive}
                     onChange={handleChangeFive}
@@ -181,6 +189,8 @@ function OddajRzeczy() {
                 </label>
                 <button className="return_container_third-btn">Dalej</button>
             </div>
+            <Contact />
+            <ContactMobile />
         </div>
     );
 }
