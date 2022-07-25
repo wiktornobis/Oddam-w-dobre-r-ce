@@ -53,9 +53,7 @@ function Nav() {
                 </div>
                 <ul className="nav_menu_login_second-column">
                     <HamburgerMenu />
-                    <li className="nav_menu_login_second-column_text-decoration"
-                        id="oddaj-rzeczy"    
-                    >
+                    <li className="nav_menu_login_second-column_text-decoration">
                         <Link to='/'>Start</Link>
                     </li>
                      <HashLink
@@ -90,7 +88,10 @@ function Nav() {
                     <div className="nav_menu_hero_third-column">
                         <h1 className="nav_menu_hero_third-column_text">Zacznij pomogać!</h1>
                         <h2 className="nav_menu_hero_third-column_text">Oddaj niechciane rzeczy w zaufane ręce</h2>
-                        <img className='nav_menu_hero_third-column_img' src= {image2} alt="obrazek dekoracyjny" />
+                        <img className='nav_menu_hero_third-column_img' 
+                             src= {image2} 
+                             alt="obrazek dekoracyjny" 
+                        />
                     </div>
                     <div className="nav_menu_hero_fourth-column">
                         <div className="nav_menu_hero_fourth-column-first">

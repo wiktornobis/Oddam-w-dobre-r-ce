@@ -46,7 +46,7 @@ function OddajRzeczy() {
       };
       
     return (
-        <div>
+        <div className="return">
             <nav className="nav_menu">
                 <div className="nav_menu_login">
                     <div className="nav_menu_login_first-column">

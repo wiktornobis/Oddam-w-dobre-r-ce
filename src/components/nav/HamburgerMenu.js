@@ -13,7 +13,7 @@ function HamburgerMenu(props) {
 
     return (
         <>
-            <div className="navbar">
+            <div className="navbar" id="oddaj-rzeczy">
                 <Link to='#' className='navbar__menu'>
                     <FontAwesomeIcon  icon={faBars} onClick={showSidebar} />
                 </Link>
