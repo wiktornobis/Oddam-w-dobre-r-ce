@@ -5,8 +5,16 @@ import { UserAuth } from "../../context/Auth.Context";
 import HamburgerMenu from "../nav/HamburgerMenu";
 import './_oddajRzeczy.scss';
 import image1 from '../../assets/Decoration.svg';
+import { useState } from "react";
+import { faBedPulse } from "@fortawesome/free-solid-svg-icons";
 
 function OddajRzeczy() {
+    const [checkedOne, setCheckedOne] = useState(false)
+    const [checkedTwo, setCheckedTwo] = useState(false)
+    const [checkedThree, setCheckedThree] = useState(false)
+    const [checkedFour, setCheckedFour] = useState(false)
+    const [checkedFive, setCheckedFive] = useState(false)
+
     const {user, logout} = UserAuth();
     const Navigate = useNavigate();
 
@@ -18,6 +26,23 @@ function OddajRzeczy() {
             console.log(e.message)
         }
     }
+
+    const handleChangeOne = () => {
+        setCheckedOne(!checkedOne);
+      };
+      const handleChangeTwo = () => {
+        setCheckedTwo(!checkedTwo);
+      };
+      const handleChangeThree = () => {
+        setCheckedThree(!checkedThree);
+      };
+      const handleChangeFour = () => {
+        setCheckedFour(!checkedFour);
+      };
+      const handleChangeFive = () => {
+        setCheckedFive(!checkedFive);
+      };
+      
     return (
         <div>
             <nav className="nav_menu">
@@ -103,6 +128,58 @@ function OddajRzeczy() {
                         <div className="return_container-right-square-fourth"></div>
                     </div>
                 </div>
+            </div>
+            <div className="return_container_second">
+                <h4 className="return_container_second-title">Ważne!</h4>
+                <p className="return_container_second-paragraph">
+                Uzupełnij szczegóły dotyczące Twoich rzeczy. 
+                Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.
+                </p>
+            </div>
+            <div className="return_container_third">
+                <p className="return_container_third-paragraph">Krok 1/4</p>
+                <p className="return_container_third-title">Zaznacz co chcesz oddać</p>
+                <label>
+                    <input
+                    type="checkbox"
+                    value={checkedOne}
+                    onChange={handleChangeOne}
+                    />
+                    ubrania, które nadają się do ponownego użycia
+                </label>
+                <label>
+                    <input
+                    type="checkbox"
+                    value={checkedTwo}
+                    onChange={handleChangeTwo}
+                    />
+                    ubrania, do wyrzucenia
+                </label>
+                <label>
+                    <input
+                    type="checkbox"
+                    value={checkedThree}
+                    onChange={handleChangeThree}
+                    />
+                    zabawki
+                </label>
+                <label>
+                    <input
+                    type="checkbox"
+                    value={checkedFour}
+                    onChange={handleChangeFour}
+                    />
+                    książki
+                </label>
+                <label>
+                    <input
+                    type="checkbox"
+                    value={checkedFive}
+                    onChange={handleChangeFive}
+                    />
+                    Inne
+                </label>
+                <button className="return_container_third-btn">Dalej</button>
             </div>
         </div>
     );
