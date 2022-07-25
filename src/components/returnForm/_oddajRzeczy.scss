@@ -1,7 +1,19 @@
+@import '../../scss/breakpoints';
+@import '../../scss/variables';
+
 .return_container {
     display: flex;
     justify-content: space-between;
     height: 700px;
+
+    @include tablet {
+        flex-direction: column;
+        height: 1100px;
+    }
+    @include mobile {
+        flex-direction: column;
+        height: 800px;
+    }
 
     &-left {
         background: url('../../assets/Form-Hero-Image.jpg') no-repeat center;
@@ -9,6 +21,17 @@
         width: 50%;
         position: relative;
         bottom: 160px;
+
+        @include tablet {
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: 50px;
+        }
+        @include mobile {
+            margin-top: 20px;
+        }
+        
     }
     &-right {
         display: flex;
@@ -19,32 +42,64 @@
         padding-right: 10%;
         height: 100%;
 
+        @include tablet {
+            padding-right: 0;
+        }
+
         &-title {
             width: 400px;
             margin-top: 100px;
             font-size: 24px;
-            
+            line-height: 38px;
+
+            @include tablet {
+                margin-top: 40px;
+                font-size: 20px;
+            }
+            @include tablet {
+                font-size: 18px;
+            }
         }
         &-img {
             width: 200px;
             margin-top: 20px;
+
+            @include tablet {
+              width: 180px;
+            }
         }
         &-paragraph {
-            font-size: 26px;
-            margin: 50px 0;
+            font-size: 28px;
+            margin-top: 30px;
+            margin-bottom: 60px;
             font-weight: 300;
+
+            @include tablet {
+                font-size: 24px;
+            }
         }
 
         &-square {
             display: flex;
             margin-left: 20px;
-
+            
             &-first, &-second, &-third, &-fourth {
                 width: 100px;
                 height: 100px;
                 border: 1px solid black;
                 transform: rotate(45deg);
                 margin-right: 10px;
+               
+                @include tablet {
+                    width: 90px;
+                    height: 90px;
+                }
+                @include mobile {
+                    width: 70px;
+                    height: 70px;
+                    margin-right: 13px;
+                }
+                
 
                 &::before {
                     content: '1';
@@ -52,7 +107,12 @@
                     transform: rotate(-45deg);
                     position: absolute;
                     top: 5px;
-                    left: 10px;
+                    left: 10px;   
+                    
+                    @include tablet {
+                        left: 8px;
+                    }
+                    
                 }
 
                 &::after {
@@ -64,6 +124,16 @@
                     width: 70px;
                     top: 35px;
                     left: 17px;
+
+                    @include tablet {
+                        top: 30px;
+                        left: 12px;
+                    }
+                     @include tablet {
+                        font-size: 13px;
+                        top: 19px;
+                        left: 1px;
+                    }
                 }
             }
             &-second {
