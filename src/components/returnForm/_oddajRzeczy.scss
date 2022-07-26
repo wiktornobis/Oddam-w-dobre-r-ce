@@ -665,6 +665,23 @@
             &_address {
                 display: flex;
                 gap: 40px;
+
+                &-first, &-second {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    &-type {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    &-value {
+                        font-size: 20px;
+                    }
+                    &-input {
+                        width: 250px;
+                    }
+                }
             }
         }
     }

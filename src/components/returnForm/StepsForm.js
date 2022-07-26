@@ -15,6 +15,15 @@ function StepsForm() {
     const [choice, setChoice] = useState('FirstChoice');
     const [value, setValue] = useState('');
 
+    const [street, setStreet] = useState('');
+    const [city, setCity] = useState('');
+    const [code, setCode] = useState('');
+    const [number, setNumber] = useState('');
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
+    const [remarks, setRemarks] = useState('');
+    
+
     const options = ['1', '2', '3', '4', '5'];
     const optionsLocation = ['Poznań', 'Warszawa', 'Kraków', 'Katowice', 'Wrocław'];
 
@@ -289,9 +298,58 @@ function StepsForm() {
                         <div className="return_container_five_address">
                             <div className="return_container_five_address-first">
                                 <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Ulica</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setStreet(e.target.value)}
+                                        />  
+                                </div>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Miasto</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setCity(e.target.value)}
+                                        />  
+                                </div>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Kod pocztowy</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setCode(e.target.value)}
+                                        />  
+                                </div>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Numer telefonu</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setNumber(e.target.value)}
+                                        />  
+                                </div>
                             </div>
                             <div className="return_container_five_address-second">
                                 <h4 className="return_container_five_address-second-title">Termin odbioru:</h4>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Data</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setDate(e.target.value)}
+                                        />  
+                                </div>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Godzina</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setTime(e.target.value)}
+                                        />  
+                                </div>
+                                <div className="return_container_five_address-first-type">
+                                    <div className="return_container_five_address-first-value">Uwagi dla kuriera</div>
+                                        <input type="text"
+                                        className="return_container_five_address-first-input"
+                                        onChange={(e) => setRemarks(e.target.value)}
+                                        />  
+                                </div>
                             </div>
                         </div>
                         
