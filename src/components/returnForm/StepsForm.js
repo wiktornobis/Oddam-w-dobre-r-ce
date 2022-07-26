@@ -11,8 +11,10 @@ function StepsForm() {
 
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState('Wybierz');
+    const [selectedLocation, setSelectedLocation] = useState('Wybierz');
 
     const options = ['1', '2', '3', '4', '5'];
+    const optionsLocation = ['Poznań', 'Warszawa', 'Kraków', 'Katowice', 'Wrocław'];
 
     const handleChangeOne = () => {
         setCheckedOne(!checkedOne);
@@ -32,6 +34,9 @@ function StepsForm() {
       
       const completeSetStep = () => {
         setStep(cur => cur + 1)
+      }
+      const backSetStep = () => {
+        setStep(cur => cur - 1)
       }
     return (
         <>
@@ -106,8 +111,8 @@ function StepsForm() {
                     <div className="return_container_second">
                         <h4 className="return_container_second-title">Ważne!</h4>
                         <p className="return_container_second-paragraph">
-                        Wszystkie rzeczy do oddania zapakuj w 60l worki. 
-                        Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.
+                            Wszystkie rzeczy do oddania zapakuj w 60l worki. 
+                            Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.
                         </p>
                     </div>
                     <div className="return_container_third">
@@ -144,11 +149,78 @@ function StepsForm() {
                                 </div>
                         )}
                         </div>
-                        <button className="return_container_third-btn"
-                                onClick={completeSetStep}
-                        > 
-                            Dalej
-                        </button>
+                        <div className="return_container_third-buttons">
+                            <button className="return_container_third-btn"
+                                    onClick={backSetStep}
+                            > 
+                                Wstecz
+                            </button>
+                            <button className="return_container_third-btn"
+                                    onClick={completeSetStep}
+                            > 
+                                Dalej
+                            </button>
+                        </div>
+                    </div>
+                </>
+            )}
+            {step === 2 && (
+                <>
+                    <div className="return_container_second">
+                        <h4 className="return_container_second-title">Ważne!</h4>
+                        <p className="return_container_second-paragraph">
+                            Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce.
+                            Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.
+                        </p>
+                    </div>
+                    <div className="return_container_four">
+                        <p className="return_container_four-paragraph">Krok 3/4</p>
+                        <p className="return_container_four-title">Lokalizacja:</p>
+                        <div className="return_container_four-dropdown">
+                        <p 
+                            onClick={() => setIsActive(!isActive)}
+                            className={isActive === false 
+                                                ? "return_container_four-dropdown-arrow" 
+                                                : "return_container_four-dropdown-arrow-active"}
+                            >   
+                            </p>  
+                        <div className="return_container_four-dropdown-btn"
+                                onClick={e => setIsActive(!isActive)}
+                            >
+                                {selectedLocation}
+                                <span className="return_container_four-dropdown-down"></span>
+                            </div>
+                            {isActive && (
+                                <div className="return_container_four-dropdown-content">
+                                    {optionsLocation.map((optionLocation) => (
+                                        <div className="return_container_four-dropdown-content-item"
+                                            onClick={(e) => {
+                                            setSelectedLocation(optionLocation)
+                                            setIsActive(false)
+                                            }
+                                    }   >
+                                            {optionLocation}
+                                        </div>
+
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <div className="return_container_four_help">
+                            <h3 className="return_container_four_help-title">Komu chcesz pomóc?</h3>
+                        </div>
+                        <div className="return_container_third-buttons">
+                            <button className="return_container_third-btn"
+                                    onClick={backSetStep}
+                            > 
+                                Wstecz
+                            </button>
+                            <button className="return_container_third-btn"
+                                    onClick={completeSetStep}
+                            > 
+                                Dalej
+                            </button>
+                        </div>
                     </div>
                 </>
             )}
