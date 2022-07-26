@@ -6,10 +6,11 @@ import Foundations from '../foundations/Foundations';
 import Nav from '../nav/Nav';
 import SimpleSteps from '../simpleSteps/SimpleSteps';
 import ThreeColumns from '../threeColumns/ThreeColumns';
+import '../../App.scss';
 
 function Home() {
     return (
-        <>
+        <div className="home">
             <Nav />  
             <ThreeColumns />
             <SimpleSteps />
@@ -17,7 +18,7 @@ function Home() {
             <Foundations />
             <Contact />
             <ContactMobile />
-        </>
+        </div>
     );
 }
 

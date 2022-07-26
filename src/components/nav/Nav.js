@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { HashLink } from 'react-router-hash-link';
 import { UserAuth } from "../../context/Auth.Context";
 
@@ -89,7 +88,10 @@ function Nav() {
                     <div className="nav_menu_hero_third-column">
                         <h1 className="nav_menu_hero_third-column_text">Zacznij pomogać!</h1>
                         <h2 className="nav_menu_hero_third-column_text">Oddaj niechciane rzeczy w zaufane ręce</h2>
-                        <img className='nav_menu_hero_third-column_img' src= {image2} alt="obrazek dekoracyjny" />
+                        <img className='nav_menu_hero_third-column_img' 
+                             src= {image2} 
+                             alt="obrazek dekoracyjny" 
+                        />
                     </div>
                     <div className="nav_menu_hero_fourth-column">
                         <div className="nav_menu_hero_fourth-column-first">

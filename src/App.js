@@ -7,7 +7,8 @@ import FormMobile from './components/contact/FormMobile';
 import './App.scss';
 import { AuthContextProvider } from "./context/Auth.Context";
 import ProtectedRoute from "./ProtectedRoute";
-import OddajRzeczy from "./components/pages/OddajRzeczy";
+import OddajRzeczy from "./components/returnForm/OddajRzeczy";
+import Logout from "./components/pages/Logout";
 
 function App() {
   return (
@@ -20,11 +21,12 @@ function App() {
           <Route path='/formularz-mobile' element={<FormMobile />} />    
           <Route path='/oddaj-rzeczy' 
                   element={
-                  <ProtectedRoute>
+                    <ProtectedRoute>
                     <OddajRzeczy />
                   </ProtectedRoute>
                   } 
           />    
+          <Route path='/wylogowano' element={<Logout />} />    
         </Routes>
       </AuthContextProvider>
     </Router>
