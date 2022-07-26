@@ -1,17 +1,18 @@
 import { useState } from "react";
 
 function StepsForm() {
-    const [checkedOne, setCheckedOne] = useState(false)
-    const [checkedTwo, setCheckedTwo] = useState(false)
-    const [checkedThree, setCheckedThree] = useState(false)
-    const [checkedFour, setCheckedFour] = useState(false)
-    const [checkedFive, setCheckedFive] = useState(false)
+    const [checkedOne, setCheckedOne] = useState(false);
+    const [checkedTwo, setCheckedTwo] = useState(false);
+    const [checkedThree, setCheckedThree] = useState(false);
+    const [checkedFour, setCheckedFour] = useState(false);
+    const [checkedFive, setCheckedFive] = useState(false);
 
     const [step, setStep] = useState(0);
 
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState('Wybierz');
     const [selectedLocation, setSelectedLocation] = useState('Wybierz');
+    const [choice, setChoice] = useState('FirstChoice');
 
     const options = ['1', '2', '3', '4', '5'];
     const optionsLocation = ['Poznań', 'Warszawa', 'Kraków', 'Katowice', 'Wrocław'];
@@ -208,14 +209,58 @@ function StepsForm() {
                         </div>
                         <div className="return_container_four_help">
                             <h3 className="return_container_four_help-title">Komu chcesz pomóc?</h3>
+                            <div className="return_container_four_help-container">
+                                <div onClick={() => setChoice('FirstChoice')}
+                                    className={choice === 'FirstChoice' 
+                                                        ? "return_container_four_help-container-title-active"
+                                                        : "return_container_four_help-container-title"
+                                              }
+                                >
+                                    dzieciom
+                                </div>
+                                <div onClick={() => setChoice('SecondChoice')}
+                                     className={choice === 'SecondChoice' 
+                                                        ? "return_container_four_help-container-title-active"
+                                                        : "return_container_four_help-container-title"
+                                                    }
+                                     >samotnym matkom
+                                </div>
+                                <div onClick={() => setChoice('ThirdChoice')}
+                                     className={choice === 'ThirdChoice' 
+                                                        ? "return_container_four_help-container-title-active"
+                                                        : "return_container_four_help-container-title"
+                                                    }
+                                     >bezdomnym
+                                </div>
+                            </div>
+                            <div className="return_container_four_help-container">
+                            <div onClick={() => setChoice('FourthChoice')}
+                                     className={choice === 'FourthChoice' 
+                                                        ? "return_container_four_help-container-title-active"
+                                                        : "return_container_four_help-container-title"
+                                                    }
+                                     >niepełnosprawnym
+                                </div>
+                                <div onClick={() => setChoice('FifthChoice')}
+                                     className={choice === 'FifthChoice' 
+                                                        ? "return_container_four_help-container-title-active"
+                                                        : "return_container_four_help-container-title"
+                                                    }
+                                     >osobom starszym
+                                </div>
+                            </div>  
+                            <h4 className="return_container_four_help-organization">
+                                    Wpisz nazwę konkretnej organizacji (opcjonalnie)
+                            </h4>
+                            <input type="text" />             
                         </div>
-                        <div className="return_container_third-buttons">
-                            <button className="return_container_third-btn"
+                        <div className="return_container_four-buttons">
+                            <button className="return_container_four-btn"
                                     onClick={backSetStep}
                             > 
                                 Wstecz
                             </button>
-                            <button className="return_container_third-btn"
+                            <button className="return_container_four-btn"
                                     onClick={completeSetStep}
                             > 
                                 Dalej
