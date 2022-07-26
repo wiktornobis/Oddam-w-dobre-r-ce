@@ -222,7 +222,7 @@
                 }
             }
         }
-        &_third, &_four {
+        &_third, &_four, &_five {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -270,8 +270,8 @@
                     max-width: 470px;
                 }
                 @include mobile {
-                    font-size: 14px;
-                    width: 340px;
+                    font-size: 12px;
+                    width: 250px;
                 }
             }
             &-label {
@@ -534,7 +534,7 @@
                     }
                     &-active {    
                         left: 210px;  
-                                
+
                         @include tablet {
                             left: 170px;
                         }
@@ -576,11 +576,22 @@
                 &-title {
                     font-size: 24px;
                     margin-bottom: 20px;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+                    @include mobile{
+                        font-size: 16px;
+                    }
                 }
                 &-container {
                     display: flex;
                     align-items: center;
                     gap: 15px;
+                   
+                    @include mobile {
+                        gap: 5px;
+                    }
 
                     &-title {
                         margin-top: 15px;
@@ -589,6 +600,15 @@
                         font-size: 24px;
                         font-weight: 300;
                         cursor: pointer;
+                        
+                        @include tablet {
+                            font-size: 18px;
+                        }
+                        @include mobile {
+                           
+                            font-size: 12px;
+                            padding: 4px;
+                        }
 
                         &-active {
                             margin-top: 15px;
@@ -598,9 +618,53 @@
                             font-weight: 300;
                             background-color: $hero-color;
                             cursor: pointer;
+
+                            @include tablet {
+                                font-size: 18px;
+                            }
+                            @include mobile{
+                                font-size: 12px;
+                                padding: 4px;
+                            }
                         }
                     }
                 }
+                &-organization {
+                    font-size: 24px;
+                    margin-top: 40px;
+                    margin-bottom: 20px;
+
+                    @include tablet {
+                        font-size: 18px;
+                    }
+                    @include mobile{
+                        font-size: 12px;
+                    }
+                }
+                &-input {
+                    width: 400px;
+                    height: 35px;
+                    border: 2px solid black;
+                    border-radius: 3px;
+                    font-size: 20px;
+                    outline: none;
+
+                    @include tablet {
+                        font-size: 18px;
+                        width: 300px;
+                    }
+                    @include mobile{
+                        font-size: 14px;
+                        width: 220px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+        &_five {
+            &_address {
+                display: flex;
+                gap: 40px;
             }
         }
     }

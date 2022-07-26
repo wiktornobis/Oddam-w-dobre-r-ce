@@ -13,6 +13,7 @@ function StepsForm() {
     const [selected, setSelected] = useState('Wybierz');
     const [selectedLocation, setSelectedLocation] = useState('Wybierz');
     const [choice, setChoice] = useState('FirstChoice');
+    const [value, setValue] = useState('');
 
     const options = ['1', '2', '3', '4', '5'];
     const optionsLocation = ['Poznań', 'Warszawa', 'Kraków', 'Katowice', 'Wrocław'];
@@ -252,7 +253,10 @@ function StepsForm() {
                             <h4 className="return_container_four_help-organization">
                                     Wpisz nazwę konkretnej organizacji (opcjonalnie)
                             </h4>
-                            <input type="text" />             
+                            <input type="text"
+                                   className="return_container_four_help-input"
+                                   onChange={(e) => setValue(e.target.value)}
+                            />             
                         </div>
                         <div className="return_container_four-buttons">
                             <button className="return_container_four-btn"
@@ -261,6 +265,43 @@ function StepsForm() {
                                 Wstecz
                             </button>
                             <button className="return_container_four-btn"
+                                    onClick={completeSetStep}
+                            > 
+                                Dalej
+                            </button>
+                        </div>
+                    </div>
+                </>
+            )}
+            {step === 3 && (
+                <>
+                    <div className="return_container_second">
+                        <h4 className="return_container_second-title">Ważne!</h4>
+                        <p className="return_container_second-paragraph">
+                            Podaj adres oraz termin odbioru rzeczy.
+                        </p>
+                    </div>
+                    <div className="return_container_five">
+                        <p className="return_container_five-paragraph">Krok 4/4</p>
+                        <p className="return_container_five-title">
+                            Podaj adres oraz termin odbioru rzecz przez kuriera
+                        </p>
+                        <div className="return_container_five_address">
+                            <div className="return_container_five_address-first">
+                                <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
+                            </div>
+                            <div className="return_container_five_address-second">
+                                <h4 className="return_container_five_address-second-title">Termin odbioru:</h4>
+                            </div>
+                        </div>
+                        
+                        <div className="return_container_five-buttons">
+                            <button className="return_container_five-btn"
+                                    onClick={backSetStep}
+                            > 
+                                Wstecz
+                            </button>
+                            <button className="return_container_five-btn"
                                     onClick={completeSetStep}
                             > 
                                 Dalej
