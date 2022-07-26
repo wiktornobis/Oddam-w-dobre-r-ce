@@ -224,6 +224,13 @@ function OddajRzeczy() {
                         <p className="return_container_third-title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</p>
                         <div className="return_container_third-dropdown">
                            <p className="return_container_third-dropdown-title"> Liczba 60l worków:</p>  
+                           <p 
+                            onClick={() => setIsActive(!isActive)}
+                            className={isActive === false 
+                                                ? "return_container_third-dropdown-arrow" 
+                                                : "return_container_third-dropdown-arrow-active"}
+                            >   
+                            </p>  
                            <div className="return_container_third-dropdown-btn"
                                 onClick={e => setIsActive(!isActive)}
                             >
@@ -243,10 +250,6 @@ function OddajRzeczy() {
                                         </div>
 
                                     ))}
-                                        {/* <div className="return_container_third-dropdown-content-item">2</div>
-                                        <div className="return_container_third-dropdown-content-item">3</div>
-                                        <div className="return_container_third-dropdown-content-item">4</div>
-                                        <div className="return_container_third-dropdown-content-item">5</div> */}
                                 </div>
                            )}
                         </div>
