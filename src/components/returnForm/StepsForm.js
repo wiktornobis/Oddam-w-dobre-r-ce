@@ -2,6 +2,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faTshirt, faVolleyball, faBook, faBoxOpen } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
+import icon from '../../assets/Icon.png';
+import { findIconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 function StepsForm() {
     const [step, setStep] = useState(0);
     const [checkedbox, setCheckbox] = useState([
@@ -9,31 +12,31 @@ function StepsForm() {
             id: 1,
             name: 'ubrania, które nadają się do ponownego użycia',
             check: false,
-            icon: <FontAwesomeIcon  icon={faTshirt}  />
+            icon: <FontAwesomeIcon  icon={faTshirt} className="icon" />
         },
         {
             id: 2,
             name: 'ubrania, do wyrzucenia',
             check: false,
-            icon: <FontAwesomeIcon  icon={faTshirt}  />
+            icon: <FontAwesomeIcon  icon={faTshirt} className="icon" />
         },
         {
             id: 3,
             name: 'zabawki',
             check: false,
-            icon: <FontAwesomeIcon  icon={faVolleyball}  />
+            icon: <FontAwesomeIcon  icon={faVolleyball} className="icon" />
         },
         {
             id: 4,
             name: 'książki',
             check: false,
-            icon: <FontAwesomeIcon  icon={faBook}  />
+            icon: <FontAwesomeIcon  icon={faBook} className="icon" />
         },
          {
             id: 5,
             name: 'inne',
             check: false,
-            icon: <FontAwesomeIcon  icon={faBoxOpen}  />
+            icon: <FontAwesomeIcon  icon={faBoxOpen} className="icon" />
         },
     ])
 
@@ -381,10 +384,32 @@ function StepsForm() {
                     <div className="return_container_summary">
                         <h3 className="return_container_summary-title">Podsumowanie Twojej darowizy</h3>
                         <p className="return_container_summary-paragraph">Oddajesz:</p>
-                        <div className="return_container_summary-information">
-                            {/* <img src="" alt="" className="return_container_summary-infomration-img" /> */}
-                            {selected} worki, ubrania w dobrym stanie, 
-
+                        <div className="return_container_summary-information">  
+                           <p>{renderFilters()}</p>
+                           <p className="return_container_summary-information-title">
+                                {selected} worki, ubrania w dobrym stanie, {choice}
+                           </p>
+                        </div>
+                        <div className="return_container_summary-information">  
+                                <img src={icon} 
+                                     alt="" 
+                                     className="return_container_summary-information-icon"
+                                />
+                           <p className="return_container_summary-information-title">
+                                dla lokalizacji: {selectedLocation}
+                           </p>
+                        </div>
+                        <div className="return_container_five-buttons">
+                            <button className="return_container_five-btn"
+                                    onClick={backSetStep}
+                            > 
+                                Wstecz
+                            </button>
+                            <button className="return_container_five-btn"
+                                    onClick={completeSetStep}
+                            > 
+                                Potwierdzam
+                            </button>
                         </div>
                     </div>            
                 </>

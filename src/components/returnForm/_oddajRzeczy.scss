@@ -783,5 +783,37 @@
                 }
             }
         }
+        &_summary {
+            background: url('../../assets/Background-Form.jpg') no-repeat center;
+            background-size: cover;  
+            padding: 60px;
+            
+            &-title {
+                font-size: 36px;
+                margin-bottom: 60px;
+            }
+
+            &-paragraph {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            &-information {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding-bottom: 30px;
+
+                &-icon {
+                    height: 35px;
+                    margin-left: 17px;
+                }
+                &-title {
+                    font-size: 24px;
+                }
+            }
+        }
     }
+}
+.icon {
+    height: 30px;
 }
