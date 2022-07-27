@@ -1,14 +1,86 @@
-import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faTshirt, faVolleyball, faBook, faBoxOpen } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function StepsForm() {
-
     const [step, setStep] = useState(0);
+    const [checkedbox, setCheckbox] = useState([
+        {
+            id: 1,
+            name: 'ubrania, które nadają się do ponownego użycia',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faTshirt}  />
+        },
+        {
+            id: 2,
+            name: 'ubrania, do wyrzucenia',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faTshirt}  />
+        },
+        {
+            id: 3,
+            name: 'zabawki',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faVolleyball}  />
+        },
+        {
+            id: 4,
+            name: 'książki',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faBook}  />
+        },
+         {
+            id: 5,
+            name: 'inne',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faBoxOpen}  />
+        },
+    ])
+
+    const handleChangeCheckedBox = id => {
+        setCheckbox(prev => {
+            return prev.map(item => {
+                 if(item.id === id){
+                    return{...item, check:!item.check}
+                } else {
+                    return {...item}
+                }
+            })
+        })
+    }
+
+    const renderCheckedBox = () => {
+        return checkedbox.map(item => (
+            <label className="return_container_third-label"
+                   key={item.id}
+                   onClick={()=> handleChangeCheckedBox(item.id)}
+            >
+                <input
+                className="return_container_third-input"
+                type="checkbox"
+                id={item.id}
+                />
+                {item.name}
+            </label>
+        ))
+    }
+
+    const renderFilters = () => {
+        return checkedbox.map((item) => {
+            if (item.check) {
+                return (
+                    <span key={item.id}>{item.icon}</span>
+                )
+            } else {
+                return null
+            }
+        })
+    }
 
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState('Wybierz');
     const [selectedLocation, setSelectedLocation] = useState('Wybierz');
-    const [choice, setChoice] = useState('FirstChoice');
+    const [choice, setChoice] = useState('dzieciom');
     const [value, setValue] = useState('');
 
     const [street, setStreet] = useState('');
@@ -45,47 +117,7 @@ function StepsForm() {
                     <div className="return_container_third">
                         <p className="return_container_third-paragraph">Krok 1/4</p>
                         <p className="return_container_third-title">Zaznacz co chcesz oddać</p>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                            
-                            />
-                            ubrania, które nadają się do ponownego użycia
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                            
-                            />
-                            ubrania, do wyrzucenia
-                            <span class="checkmark"></span>
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                            
-                            />
-                            zabawki
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                           
-                            />
-                            książki
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                
-                            />
-                            Inne
-                        </label>
+                        {renderCheckedBox()}
                         <button className="return_container_third-btn"
                                 onClick={completeSetStep}
                         > 
@@ -197,23 +229,23 @@ function StepsForm() {
                         <div className="return_container_four_help">
                             <h3 className="return_container_four_help-title">Komu chcesz pomóc?</h3>
                             <div className="return_container_four_help-container">
-                                <div onClick={() => setChoice('FirstChoice')}
-                                    className={choice === 'FirstChoice' 
+                                <div onClick={() => setChoice('dzieciom')}
+                                    className={choice === 'dzieciom' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                               }
                                 >
                                     dzieciom
                                 </div>
-                                <div onClick={() => setChoice('SecondChoice')}
-                                     className={choice === 'SecondChoice' 
+                                <div onClick={() => setChoice('samotnym matkom')}
+                                     className={choice === 'samotnym matkom' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
                                      >samotnym matkom
                                 </div>
-                                <div onClick={() => setChoice('ThirdChoice')}
-                                     className={choice === 'ThirdChoice' 
+                                <div onClick={() => setChoice('bezdomnym')}
+                                     className={choice === 'bezdomnym' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
@@ -221,15 +253,15 @@ function StepsForm() {
                                 </div>
                             </div>
                             <div className="return_container_four_help-container">
-                            <div onClick={() => setChoice('FourthChoice')}
-                                     className={choice === 'FourthChoice' 
+                            <div onClick={() => setChoice('niepełnosprawnym')}
+                                     className={choice === 'niepełnosprawnym'
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
                                      >niepełnosprawnym
                                 </div>
-                                <div onClick={() => setChoice('FifthChoice')}
-                                     className={choice === 'FifthChoice' 
+                                <div onClick={() => setChoice('osobom starszym')}
+                                     className={choice === 'osobom starszym' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
