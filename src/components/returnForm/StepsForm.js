@@ -345,8 +345,8 @@ function StepsForm() {
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Uwagi dla kuriera</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
+                                        <textarea type="text"
+                                        className="return_container_five_address-first-textarea"
                                         onChange={(e) => setRemarks(e.target.value)}
                                         />  
                                 </div>
