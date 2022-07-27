@@ -1,11 +1,7 @@
+import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function StepsForm() {
-    const [checkedOne, setCheckedOne] = useState(false);
-    const [checkedTwo, setCheckedTwo] = useState(false);
-    const [checkedThree, setCheckedThree] = useState(false);
-    const [checkedFour, setCheckedFour] = useState(false);
-    const [checkedFive, setCheckedFive] = useState(false);
 
     const [step, setStep] = useState(0);
 
@@ -27,21 +23,7 @@ function StepsForm() {
     const options = ['1', '2', '3', '4', '5'];
     const optionsLocation = ['Poznań', 'Warszawa', 'Kraków', 'Katowice', 'Wrocław'];
 
-    const handleChangeOne = () => {
-        setCheckedOne(!checkedOne);
-      };
-      const handleChangeTwo = () => {
-        setCheckedTwo(!checkedTwo);
-      };
-      const handleChangeThree = () => {
-        setCheckedThree(!checkedThree);
-      };
-      const handleChangeFour = () => {
-        setCheckedFour(!checkedFour);
-      };
-      const handleChangeFive = () => {
-        setCheckedFive(!checkedFive);
-      };
+    
       
       const completeSetStep = () => {
         setStep(cur => cur + 1)
@@ -67,8 +49,7 @@ function StepsForm() {
                             <input
                             className="return_container_third-input"
                             type="checkbox"
-                            value={checkedOne}
-                            onChange={handleChangeOne}
+                            
                             />
                             ubrania, które nadają się do ponownego użycia
                         </label>
@@ -76,8 +57,7 @@ function StepsForm() {
                             <input
                             className="return_container_third-input"
                             type="checkbox"
-                            value={checkedTwo}
-                            onChange={handleChangeTwo}
+                            
                             />
                             ubrania, do wyrzucenia
                             <span class="checkmark"></span>
@@ -86,8 +66,7 @@ function StepsForm() {
                             <input
                             className="return_container_third-input"
                             type="checkbox"
-                            value={checkedThree}
-                            onChange={handleChangeThree}
+                            
                             />
                             zabawki
                         </label>
@@ -95,8 +74,7 @@ function StepsForm() {
                             <input
                             className="return_container_third-input"
                             type="checkbox"
-                            value={checkedFour}
-                            onChange={handleChangeFour}
+                           
                             />
                             książki
                         </label>
@@ -104,8 +82,7 @@ function StepsForm() {
                             <input
                             className="return_container_third-input"
                             type="checkbox"
-                            value={checkedFive}
-                            onChange={handleChangeFive}
+                
                             />
                             Inne
                         </label>
@@ -351,8 +328,7 @@ function StepsForm() {
                                         />  
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>       
                         <div className="return_container_five-buttons">
                             <button className="return_container_five-btn"
                                     onClick={backSetStep}
@@ -366,6 +342,19 @@ function StepsForm() {
                             </button>
                         </div>
                     </div>
+                </>
+            )}
+            {step === 4 && (
+                <>
+                    <div className="return_container_summary">
+                        <h3 className="return_container_summary-title">Podsumowanie Twojej darowizy</h3>
+                        <p className="return_container_summary-paragraph">Oddajesz:</p>
+                        <div className="return_container_summary-information">
+                            {/* <img src="" alt="" className="return_container_summary-infomration-img" /> */}
+                            {selected} worki, ubrania w dobrym stanie, 
+
+                        </div>
+                    </div>            
                 </>
             )}
         </>
