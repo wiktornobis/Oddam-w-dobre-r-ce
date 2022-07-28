@@ -312,30 +312,35 @@ function StepsForm() {
                                 <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Ulica</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setStreet(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setStreet(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Miasto</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setCity(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setCity(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Kod pocztowy</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setCode(e.target.value)}
+                                        <input 
+                                            type="text" 
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setCode(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Numer telefonu</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setNumber(e.target.value)}
+                                        <input 
+                                            type="number"
+                                            pattern="[0-9]*"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setNumber(e.target.value)}
                                         />  
                                 </div>
                             </div>
@@ -343,23 +348,26 @@ function StepsForm() {
                                 <h4 className="return_container_five_address-second-title">Termin odbioru:</h4>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Data</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setDate(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setDate(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Godzina</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setTime(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setTime(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Uwagi dla kuriera</div>
-                                        <textarea type="text"
-                                        className="return_container_five_address-first-textarea"
-                                        onChange={(e) => setRemarks(e.target.value)}
+                                        <textarea 
+                                            type="text"
+                                            className="return_container_five_address-first-textarea"
+                                            onChange={(e) => setRemarks(e.target.value)}
                                         />  
                                 </div>
                             </div>
@@ -398,7 +406,9 @@ function StepsForm() {
                            <p className="return_container_summary-information-title">
                                 dla lokalizacji: {selectedLocation}
                            </p>
+                           
                         </div>
+                        <p className="return_container_summary-information-organization">{value}</p>
                         <div className="return_container_five_address">
                             <div className="return_container_five_address-first">
                                     <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
@@ -441,7 +451,7 @@ function StepsForm() {
                             > 
                                 Wstecz
                             </button>
-                            <button className="return_container_five-btn"
+                            <button className="return_container_five-btn return_container_summary-information-btn"
                                     onClick={completeSetStep}
                             > 
                                 Potwierdzam
