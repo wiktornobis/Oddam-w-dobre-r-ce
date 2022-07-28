@@ -1,9 +1,9 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faTshirt, faVolleyball, faBook, faBoxOpen, faCity } from "@fortawesome/free-solid-svg-icons";
+import { faTshirt, faVolleyball, faBook, faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 import icon from '../../assets/Icon.png';
-import { findIconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 
 function StepsForm() {
     const [step, setStep] = useState(0);
