@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faTshirt, faVolleyball, faBook, faBoxOpen } from "@fortawesome/free-solid-svg-icons";
+import { faTshirt, faVolleyball, faBook, faBoxOpen, faCity } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 import icon from '../../assets/Icon.png';
@@ -399,6 +399,42 @@ function StepsForm() {
                                 dla lokalizacji: {selectedLocation}
                            </p>
                         </div>
+                        <div className="return_container_five_address">
+                            <div className="return_container_five_address-first">
+                                    <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Ulica</div>
+                                           <p className="return_container_five_address-first-summary">{street}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Miasto</div>
+                                        <p className="return_container_five_address-first-summary">{city}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Kod pocztowy</div>
+                                        <p className="return_container_five_address-first-summary">{code}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Numer telefonu</div>
+                                        <p className="return_container_five_address-first-summary">{number}</p>
+                                    </div>
+                                </div>
+                                <div className="return_container_five_address-second">
+                                    <h4 className="return_container_five_address-second-title">Termin odbioru:</h4>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Data</div>
+                                        <p className="return_container_five_address-first-summary">{date}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Godzina</div>
+                                        <p className="return_container_five_address-first-summary">{time}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Uwagi dla kuriera</div>
+                                        <p className="return_container_five_address-first-summary">{remarks}</p>
+                                    </div>
+                                </div>
+                            </div>
                         <div className="return_container_five-buttons">
                             <button className="return_container_five-btn"
                                     onClick={backSetStep}

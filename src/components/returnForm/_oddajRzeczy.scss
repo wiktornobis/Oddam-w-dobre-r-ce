@@ -780,6 +780,29 @@
                             height: 80px;
                         }
                     }
+                    &-summary {
+                        width: 300px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding-left: 30px;
+                        font-size: 22px;
+                        font-weight: 300;
+
+                        @include desktop {
+                            width: 250px;
+                            font-size: 20px;
+                            padding-left: 10px;
+                        }
+                        @include tablet {
+                            width: 200px;
+                            font-size: 16px;
+                        }
+                        @include mobile {
+                            width: 120px;
+                            font-size: 12px;
+                        }
+                    }
                 }
             }
         }
@@ -817,3 +840,4 @@
 .icon {
     height: 30px;
 }
+
