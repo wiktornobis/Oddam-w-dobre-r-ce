@@ -340,8 +340,7 @@ function StepsForm() {
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Numer telefonu</div>
                                         <input 
-                                            type="number"
-                                            pattern="[0-9]*"
+                                            type="tel"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setNumber(e.target.value)}
                                         />  
@@ -352,7 +351,7 @@ function StepsForm() {
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Data</div>
                                         <input 
-                                            type="text"
+                                            type="date"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setDate(e.target.value)}
                                         />  
@@ -360,7 +359,7 @@ function StepsForm() {
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Godzina</div>
                                         <input 
-                                            type="text"
+                                            type="time"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setTime(e.target.value)}
                                         />  
