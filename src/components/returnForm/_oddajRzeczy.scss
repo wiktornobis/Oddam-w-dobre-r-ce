@@ -918,6 +918,73 @@
                 }
             }
         }
+        &_thanks {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 800px;
+            background: url('../../assets/Background-Form.jpg') no-repeat center;
+            background-size: cover;  
+            line-height: 60px;
+
+            @include desktop {
+                height: 600px;
+                line-height: 50px;
+            }
+            @include tablet {
+                height: 420px;
+                line-height: 230px;
+            }
+
+             @include mobile {
+                height: 250px;
+                line-height: 25px;
+            }
+
+            &_container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                left: 10%;
+
+                @include mobile {
+                    left: 5%;
+                }
+              
+
+                &_title {
+                    width: 700px;
+                    font-weight: 300;
+                    font-size: 40px;
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    @include desktop {
+                        font-size: 32px;
+                        width: 550px;
+                    }
+                    @include tablet {
+                        font-size: 22px;
+                        width: 370px;
+                    }
+                     @include mobile {
+                        font-size: 14px;
+                        width: 240px;
+                        margin-bottom: 5px;
+                    }
+                }
+                &_img {
+                    @include mobile {
+                        width: 130px;
+                    }
+                }
+            }
+
+           
+        }
     }
 }
 .icon {

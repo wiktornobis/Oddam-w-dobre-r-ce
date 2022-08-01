@@ -3,6 +3,7 @@ import { faTshirt, faVolleyball, faBook, faBoxOpen} from "@fortawesome/free-soli
 import { useState } from "react";
 
 import icon from '../../assets/Icon.png';
+import icon2 from '../../assets/Decoration.svg';
 
 
 function StepsForm() {
@@ -158,8 +159,9 @@ function StepsForm() {
                             </div>
                             {isActive && (
                                 <div className="return_container_third-dropdown-content">
-                                    {options.map((option) => (
+                                    {options.map((option, index) => (
                                         <div className="return_container_third-dropdown-content-item"
+                                            key={index}
                                             onClick={(e) => {
                                             setSelected(option)
                                             setIsActive(false)
@@ -215,8 +217,9 @@ function StepsForm() {
                             </div>
                             {isActive && (
                                 <div className="return_container_four-dropdown-content">
-                                    {optionsLocation.map((optionLocation) => (
+                                    {optionsLocation.map((optionLocation, index) => (
                                         <div className="return_container_four-dropdown-content-item"
+                                            key={index}
                                             onClick={(e) => {
                                             setSelectedLocation(optionLocation)
                                             setIsActive(false)
@@ -457,6 +460,23 @@ function StepsForm() {
                                 Potwierdzam
                             </button>
                         </div>
+                    </div>            
+                </>
+            )}
+            {step === 5 && (
+                <>
+                    <div className="return_container_thanks">
+                        <div className="return_container_thanks_container">
+                            <h3 className="return_container_thanks_container_title">
+                                Dziękujemy za przesłanie formularza 
+                                Na maila prześlemy wszelkie informacje o odbiorze.
+                            </h3>
+                            <img src={icon2} 
+                                 alt="" 
+                                 className="return_container_thanks_container_img"
+                            />
+                        </div>
+                   
                     </div>            
                 </>
             )}
