@@ -57,11 +57,13 @@ function StepsForm() {
         return checkedbox.map(item => (
             <label className="return_container_third-label"
                    key={item.id}
-                   onClick={()=> handleChangeCheckedBox(item.id)}
+                   
             >
                 <input
+                onClick={()=> handleChangeCheckedBox(item.id)}
                 className="return_container_third-input"
                 type="checkbox"
+                value={checkedbox}
                 id={item.id}
                 />
                 {item.name}
@@ -280,6 +282,7 @@ function StepsForm() {
                             <input type="text"
                                    className="return_container_four_help-input"
                                    onChange={(e) => setValue(e.target.value)}
+                                   value={value}
                             />             
                         </div>
                         <div className="return_container_four-buttons">
@@ -319,6 +322,7 @@ function StepsForm() {
                                             type="text"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setStreet(e.target.value)}
+                                            value={street}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
@@ -327,6 +331,7 @@ function StepsForm() {
                                             type="text"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setCity(e.target.value)}
+                                            value={city}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
@@ -335,6 +340,7 @@ function StepsForm() {
                                             type="text" 
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setCode(e.target.value)}
+                                            value={code}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
@@ -343,6 +349,7 @@ function StepsForm() {
                                             type="tel"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setNumber(e.target.value)}
+                                            value={number}
                                         />  
                                 </div>
                             </div>
@@ -354,6 +361,7 @@ function StepsForm() {
                                             type="date"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setDate(e.target.value)}
+                                            value={date}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
@@ -362,6 +370,7 @@ function StepsForm() {
                                             type="time"
                                             className="return_container_five_address-first-input"
                                             onChange={(e) => setTime(e.target.value)}
+                                            value={time}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
@@ -370,6 +379,7 @@ function StepsForm() {
                                             type="text"
                                             className="return_container_five_address-first-textarea"
                                             onChange={(e) => setRemarks(e.target.value)}
+                                            value={remarks}
                                         />  
                                 </div>
                             </div>
