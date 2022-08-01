@@ -1,14 +1,90 @@
-import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faTshirt, faVolleyball, faBook, faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-function StepsForm() {
+import icon from '../../assets/Icon.png';
+import icon2 from '../../assets/Decoration.svg';
 
+
+function StepsForm() {
     const [step, setStep] = useState(0);
+    const [checkedbox, setCheckbox] = useState([
+        {
+            id: 1,
+            name: 'ubrania, które nadają się do ponownego użycia',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faTshirt} className="icon" />
+        },
+        {
+            id: 2,
+            name: 'ubrania, do wyrzucenia',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faTshirt} className="icon" />
+        },
+        {
+            id: 3,
+            name: 'zabawki',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faVolleyball} className="icon" />
+        },
+        {
+            id: 4,
+            name: 'książki',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faBook} className="icon" />
+        },
+         {
+            id: 5,
+            name: 'inne',
+            check: false,
+            icon: <FontAwesomeIcon  icon={faBoxOpen} className="icon" />
+        },
+    ])
+
+    const handleChangeCheckedBox = id => {
+        setCheckbox(prev => {
+            return prev.map(item => {
+                 if(item.id === id){
+                    return{...item, check:!item.check}
+                } else {
+                    return {...item}
+                }
+            })
+        })
+    }
+
+    const renderCheckedBox = () => {
+        return checkedbox.map(item => (
+            <label className="return_container_third-label"
+                   key={item.id}
+                   onClick={()=> handleChangeCheckedBox(item.id)}
+            >
+                <input
+                className="return_container_third-input"
+                type="checkbox"
+                id={item.id}
+                />
+                {item.name}
+            </label>
+        ))
+    }
+
+    const renderFilters = () => {
+        return checkedbox.map((item) => {
+            if (item.check) {
+                return (
+                    <span key={item.id}>{item.icon}</span>
+                )
+            } else {
+                return null
+            }
+        })
+    }
 
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState('Wybierz');
     const [selectedLocation, setSelectedLocation] = useState('Wybierz');
-    const [choice, setChoice] = useState('FirstChoice');
+    const [choice, setChoice] = useState('dzieciom');
     const [value, setValue] = useState('');
 
     const [street, setStreet] = useState('');
@@ -45,47 +121,7 @@ function StepsForm() {
                     <div className="return_container_third">
                         <p className="return_container_third-paragraph">Krok 1/4</p>
                         <p className="return_container_third-title">Zaznacz co chcesz oddać</p>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                            
-                            />
-                            ubrania, które nadają się do ponownego użycia
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                            
-                            />
-                            ubrania, do wyrzucenia
-                            <span class="checkmark"></span>
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                            
-                            />
-                            zabawki
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                           
-                            />
-                            książki
-                        </label>
-                        <label className="return_container_third-label">
-                            <input
-                            className="return_container_third-input"
-                            type="checkbox"
-                
-                            />
-                            Inne
-                        </label>
+                        {renderCheckedBox()}
                         <button className="return_container_third-btn"
                                 onClick={completeSetStep}
                         > 
@@ -123,8 +159,9 @@ function StepsForm() {
                             </div>
                             {isActive && (
                                 <div className="return_container_third-dropdown-content">
-                                    {options.map((option) => (
+                                    {options.map((option, index) => (
                                         <div className="return_container_third-dropdown-content-item"
+                                            key={index}
                                             onClick={(e) => {
                                             setSelected(option)
                                             setIsActive(false)
@@ -180,8 +217,9 @@ function StepsForm() {
                             </div>
                             {isActive && (
                                 <div className="return_container_four-dropdown-content">
-                                    {optionsLocation.map((optionLocation) => (
+                                    {optionsLocation.map((optionLocation, index) => (
                                         <div className="return_container_four-dropdown-content-item"
+                                            key={index}
                                             onClick={(e) => {
                                             setSelectedLocation(optionLocation)
                                             setIsActive(false)
@@ -197,23 +235,23 @@ function StepsForm() {
                         <div className="return_container_four_help">
                             <h3 className="return_container_four_help-title">Komu chcesz pomóc?</h3>
                             <div className="return_container_four_help-container">
-                                <div onClick={() => setChoice('FirstChoice')}
-                                    className={choice === 'FirstChoice' 
+                                <div onClick={() => setChoice('dzieciom')}
+                                    className={choice === 'dzieciom' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                               }
                                 >
                                     dzieciom
                                 </div>
-                                <div onClick={() => setChoice('SecondChoice')}
-                                     className={choice === 'SecondChoice' 
+                                <div onClick={() => setChoice('samotnym matkom')}
+                                     className={choice === 'samotnym matkom' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
                                      >samotnym matkom
                                 </div>
-                                <div onClick={() => setChoice('ThirdChoice')}
-                                     className={choice === 'ThirdChoice' 
+                                <div onClick={() => setChoice('bezdomnym')}
+                                     className={choice === 'bezdomnym' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
@@ -221,15 +259,15 @@ function StepsForm() {
                                 </div>
                             </div>
                             <div className="return_container_four_help-container">
-                            <div onClick={() => setChoice('FourthChoice')}
-                                     className={choice === 'FourthChoice' 
+                            <div onClick={() => setChoice('niepełnosprawnym')}
+                                     className={choice === 'niepełnosprawnym'
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
                                      >niepełnosprawnym
                                 </div>
-                                <div onClick={() => setChoice('FifthChoice')}
-                                     className={choice === 'FifthChoice' 
+                                <div onClick={() => setChoice('osobom starszym')}
+                                     className={choice === 'osobom starszym' 
                                                         ? "return_container_four_help-container-title-active"
                                                         : "return_container_four_help-container-title"
                                                     }
@@ -277,30 +315,35 @@ function StepsForm() {
                                 <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Ulica</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setStreet(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setStreet(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Miasto</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setCity(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setCity(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Kod pocztowy</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setCode(e.target.value)}
+                                        <input 
+                                            type="text" 
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setCode(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Numer telefonu</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setNumber(e.target.value)}
+                                        <input 
+                                            type="number"
+                                            pattern="[0-9]*"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setNumber(e.target.value)}
                                         />  
                                 </div>
                             </div>
@@ -308,23 +351,26 @@ function StepsForm() {
                                 <h4 className="return_container_five_address-second-title">Termin odbioru:</h4>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Data</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setDate(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setDate(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Godzina</div>
-                                        <input type="text"
-                                        className="return_container_five_address-first-input"
-                                        onChange={(e) => setTime(e.target.value)}
+                                        <input 
+                                            type="text"
+                                            className="return_container_five_address-first-input"
+                                            onChange={(e) => setTime(e.target.value)}
                                         />  
                                 </div>
                                 <div className="return_container_five_address-first-type">
                                     <div className="return_container_five_address-first-value">Uwagi dla kuriera</div>
-                                        <textarea type="text"
-                                        className="return_container_five_address-first-textarea"
-                                        onChange={(e) => setRemarks(e.target.value)}
+                                        <textarea 
+                                            type="text"
+                                            className="return_container_five_address-first-textarea"
+                                            onChange={(e) => setRemarks(e.target.value)}
                                         />  
                                 </div>
                             </div>
@@ -349,11 +395,88 @@ function StepsForm() {
                     <div className="return_container_summary">
                         <h3 className="return_container_summary-title">Podsumowanie Twojej darowizy</h3>
                         <p className="return_container_summary-paragraph">Oddajesz:</p>
-                        <div className="return_container_summary-information">
-                            {/* <img src="" alt="" className="return_container_summary-infomration-img" /> */}
-                            {selected} worki, ubrania w dobrym stanie, 
-
+                        <div className="return_container_summary-information">  
+                           <p>{renderFilters()}</p>
+                           <p className="return_container_summary-information-title">
+                                {selected} worki, ubrania w dobrym stanie, {choice}
+                           </p>
                         </div>
+                        <div className="return_container_summary-information">  
+                                <img src={icon} 
+                                     alt="" 
+                                     className="return_container_summary-information-icon"
+                                />
+                           <p className="return_container_summary-information-title">
+                                dla lokalizacji: {selectedLocation}
+                           </p>
+                           
+                        </div>
+                        <p className="return_container_summary-information-organization">{value}</p>
+                        <div className="return_container_five_address">
+                            <div className="return_container_five_address-first">
+                                    <h4 className="return_container_five_address-first-title">Adres odbioru:</h4>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Ulica</div>
+                                           <p className="return_container_five_address-first-summary">{street}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Miasto</div>
+                                        <p className="return_container_five_address-first-summary">{city}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Kod pocztowy</div>
+                                        <p className="return_container_five_address-first-summary">{code}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Numer telefonu</div>
+                                        <p className="return_container_five_address-first-summary">{number}</p>
+                                    </div>
+                                </div>
+                                <div className="return_container_five_address-second">
+                                    <h4 className="return_container_five_address-second-title">Termin odbioru:</h4>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Data</div>
+                                        <p className="return_container_five_address-first-summary">{date}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Godzina</div>
+                                        <p className="return_container_five_address-first-summary">{time}</p>
+                                    </div>
+                                    <div className="return_container_five_address-first-type">
+                                        <div className="return_container_five_address-first-value">Uwagi dla kuriera</div>
+                                        <p className="return_container_five_address-first-summary">{remarks}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div className="return_container_five-buttons">
+                            <button className="return_container_five-btn"
+                                    onClick={backSetStep}
+                            > 
+                                Wstecz
+                            </button>
+                            <button className="return_container_five-btn return_container_summary-information-btn"
+                                    onClick={completeSetStep}
+                            > 
+                                Potwierdzam
+                            </button>
+                        </div>
+                    </div>            
+                </>
+            )}
+            {step === 5 && (
+                <>
+                    <div className="return_container_thanks">
+                        <div className="return_container_thanks_container">
+                            <h3 className="return_container_thanks_container_title">
+                                Dziękujemy za przesłanie formularza 
+                                Na maila prześlemy wszelkie informacje o odbiorze.
+                            </h3>
+                            <img src={icon2} 
+                                 alt="" 
+                                 className="return_container_thanks_container_img"
+                            />
+                        </div>
+                   
                     </div>            
                 </>
             )}
