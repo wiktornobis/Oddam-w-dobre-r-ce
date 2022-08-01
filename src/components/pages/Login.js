@@ -6,12 +6,40 @@ import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
+import FormInput from './FormInput';
 import './_formAuth.scss';
 
 function Registration() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [error, setError] = useState('')
+    const [values, setValues] = useState({
+        email: "",
+        password: "",
+      });
+
+      const inputs = [
+    
+        {
+          id: 1,
+          name: "email",
+          type: "email",
+          errorMessage: "Błedny format e-mail",
+          label: "Email",
+          required: true,
+        },
+        {
+          id: 2,
+          name: "password",
+          type: "password",
+          errorMessage:
+            "Wymagane hasło!",
+          label: "Hasło",
+          required: true,
+        },
+      ];
+
+      const onChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
+      };
     const navigate = useNavigate()
     const { signIn } = UserAuth();
 
@@ -19,7 +47,7 @@ function Registration() {
         e.preventDefault();
         setError('');
         try {
-          await signIn(email, password);
+          await signIn(values.email, values.password);
           navigate('/')
         } catch (e) {
           setError(e.message);
@@ -48,19 +76,15 @@ function Registration() {
                         onSubmit={handleSubmit}
                     >
                         <div className="form_auth_container">
-                            <label className="form_auth_label">Email</label>
-                            <input className="form_auth_input" 
-                                   type="email"
-                                   onChange={(e) => setEmail(e.target.value)}
-                            /> 
+                            {inputs.map((input) => (
+                                <FormInput
+                                    key={input.id}
+                                    {...input}
+                                    value={values[input.name]}
+                                    onChange={onChange}
+                            />
+                            ))}
                         </div>
-                            <div className="form_auth_container">
-                                <label className="form_auth_label">Hasło</label>
-                                <input className="form_auth_input" 
-                                       type="password" 
-                                       onChange={(e) => setPassword(e.target.value)}
-                                />   
-                            </div>
                         <div className="form_auth_mobile">
                                 <Link to='/rejestracja'>
                                     <p className="form_auth_mobile-login">

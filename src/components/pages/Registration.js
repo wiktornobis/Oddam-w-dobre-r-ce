@@ -4,28 +4,66 @@ import { UserAuth } from '../../context/Auth.Context';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 
-
+import FormInput from "./FormInput";
 
 import img1 from '../../assets/Decoration.svg';
 import Navigation from '../nav/Navigation';
 import './_formAuth.scss';
 
 function Registration() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('')
+    const [values, setValues] = useState({
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+
+      const inputs = [
+    
+        {
+          id: 1,
+          name: "email",
+          type: "email",
+          errorMessage: "Błedny format e-mail",
+          label: "Email",
+          required: true,
+        },
+        {
+          id: 2,
+          name: "password",
+          type: "password",
+          errorMessage:
+            "Hasło musi mieć 8-20 znaków i zawierać 1 wielką literę, 1 number i 1 znak specjalny!",
+          label: "Hasło",
+          pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+          required: true,
+        },
+        {
+          id: 3,
+          name: "confirmPassword",
+          type: "password",
+          errorMessage: "Hasła nie są takie same",
+          label: "Powtórz hasło",
+          pattern: values.password,
+          required: true,
+        },
+      ];
+
+      const onChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
+      };
+
     const { createUser } = UserAuth();
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');
+       
         try {
-          await createUser(email, password, confirmPassword);
+          await createUser(values.email, values.password, values.confirmPassword);
           navigate('/zaloguj')
         } catch (e) {
-          setError(e.message);
+          setError(e.message)
         }
       };
 
@@ -39,39 +77,27 @@ function Registration() {
                      className="login_first-container_image" 
                 />
             </div>
+         
             {error && 
-                <div className="error_registration">
-                    <FontAwesomeIcon icon={faCircleXmark} className='error_registration_circle' /> 
-                    <p className='error_registration_title'>Użytkownik z podanym adresem e-mail już istnieje.</p>
+                <div className="error_login">
+                     <FontAwesomeIcon icon={faCircleXmark} className='error_login_circle' /> 
+                    <p className='error_login_title'>Użytkownik z podanym adresem e-mail już istnieje.</p>
                 </div>
             }
             <div className="form_auth">   
                     <form 
-                        className='form_auth_back'
                         onSubmit={handleSubmit}
                     >
                         <div className="form_auth_container">
-                            <label className="form_auth_label">Email</label>
-                            <input className="form_auth_input" 
-                                   type="email"
-                                   onChange={(e) => setEmail(e.target.value)}
-                            /> 
+                        {inputs.map((input) => (
+                            <FormInput
+                                key={input.id}
+                                {...input}
+                                value={values[input.name]}
+                                onChange={onChange}
+                                />
+                                ))}
                         </div>
-                            <div className="form_auth_container">
-                                <label className="form_auth_label">Hasło</label>
-                                <input className="form_auth_input" 
-                                       type="password" 
-                                       onChange={(e) => setPassword(e.target.value)}
-                                />   
-                            </div>
-                            <div className="form_auth_container">
-                                <label className="form_auth_label">Powtórz hasło</label>
-                                <input className="form_auth_input" 
-                                       type="password" 
-                                       onChange={(e) => setConfirmPassword(e.target.value)}
-                                       
-                                />                 
-                            </div>
                         <div className="form_auth_mobile">
                                 <Link to='/zaloguj'>
                                     <p className="form_auth_mobile-login">
